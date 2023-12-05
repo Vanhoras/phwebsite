@@ -1,5 +1,6 @@
 <template>
-    <main>
+  <div class="background"/>
+    <main class="hexagon" >
         <div class="lg-crop">
           <img src="@/assets/images/games/header.png" alt="Games Overview Header" class="games__overview__image"/>
         </div>
@@ -22,12 +23,6 @@
   </script>
   
   <style scoped>
-    main {
-        height: 100vh;
-        position: relative;
-        padding-top: 7.5rem;
-    }
-    
     
     .games__overview__content {
         max-width: 100rem;

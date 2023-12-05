@@ -72,6 +72,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+  height: 100%;
+  position: relative;
+  padding-top: 7.5rem;
+}
+
 .hexagon {
   background-image: url("@/assets/images/hexagon.png");
 }
@@ -80,7 +86,9 @@ body {
   position: fixed;
   min-height: 100%;
   min-width: 100%;
-  background: linear-gradient(142deg, rgba(21,23,24,1) 0%, rgba(21,23,24,1) 35%, rgba(80,80,80,1) 100%);
+  background: linear-gradient(150deg, var(--black) 0%, #1d1f20 100%);
+  top: 0;
+  left: 0;
 }
 
 h4 {

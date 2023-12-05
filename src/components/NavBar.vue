@@ -9,7 +9,7 @@
                     <RouterLink to="/websites" class="nav-link">Websites</RouterLink>
                 </li>
                 <li class="nav-link__wrapper">
-                    <RouterLink to="/apps" class="nav-link">Apps</RouterLink>
+                    <RouterLink to="/software" class="nav-link">Software</RouterLink>
                 </li>
                 <li class="nav-link__wrapper">
                     <RouterLink to="/games" class="nav-link">Games</RouterLink>

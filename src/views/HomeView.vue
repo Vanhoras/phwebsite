@@ -1,5 +1,6 @@
 <template>
-  <main>
+  <div class="background"/>
+  <main class="hexagon" >
     <div class="home">
       
       <img src="@/assets/images/paul.jpg" alt="Paul Hielscher" class="self-image"/>
@@ -8,7 +9,7 @@
         <p class="introduction__greeting">Hey,</p>
         <p class="introduction__self">I'm Paul</p>
         <h2 class="introduction__job">Developer</h2>
-        <p class="introduction__text">skilled in everything from <RouterLink class="link--blue" to="/websites">Websites</RouterLink>,<br/> over <RouterLink class="link--yellow" to="/apps">Financing Software</RouterLink> to <RouterLink to="/games" class="link--magenta">Game Development</RouterLink></p>
+        <p class="introduction__text">skilled in everything from <RouterLink class="link--blue" to="/websites">Websites</RouterLink>,<br/> over <RouterLink class="link--yellow" to="/software">Financing Software</RouterLink> to <RouterLink to="/games" class="link--magenta">Game Development</RouterLink></p>
       </div>
     </div>
   </main>
@@ -41,7 +42,7 @@
   .introduction__container {
     position: absolute;
     left: 105rem;
-    top: 11rem;
+    top: 10rem;
   }
 
   .introduction__greeting {
@@ -58,14 +59,14 @@
   .introduction__job {
     font-size: 8.5rem;
     font-weight: normal;
-    margin-top: -2rem;
+    margin-top: -1rem;
     margin-left: -0.4rem;
   }
 
   .introduction__text {
     font-size: 2.5rem;
     font-weight: normal;
-    margin-top: 0rem;
+    margin-top: 2.5rem;
   }
 
 </style>

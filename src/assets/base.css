@@ -2,8 +2,14 @@
   /* Dark Mode Colors*/
   --black: #151718;
 
-  --link: #ff31d0;
-  --link--highlight: #d7bfd1;
+  --link-1: #ff31d0;
+  --link-1--highlight: #d7bfd1;
+
+  --link-2: #ffff29;
+  --link-2--highlight: #f2f2d3;
+
+  --link-3: #6394d5;
+  --link-3--highlight: #c0dbff;
 
   --divider: #888888;
   --text: rgba(235, 235, 235, 0.64);
@@ -50,7 +56,6 @@ body {
   min-height: 100vh;
   color: var(--text);
   background-color: var(--black);
-  background-image: url("@/assets/images/hexagon.png");
   line-height: 1.6;
   font-family:
     'Segoe UI',
@@ -67,7 +72,42 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.hexagon {
+  background-image: url("@/assets/images/hexagon.png");
+}
+
+.background {
+  position: fixed;
+  min-height: 100%;
+  min-width: 100%;
+  background: linear-gradient(142deg, rgba(21,23,24,1) 0%, rgba(21,23,24,1) 35%, rgba(80,80,80,1) 100%);
+}
+
 h4 {
   display: inline;
   font-weight: bold;
+}
+
+.link--magenta {
+  color: var(--link-1);
+}
+
+.link--magenta:hover {
+  color: var(--link-1--highlight);
+}
+
+.link--yellow {
+  color: var(--link-2);
+}
+
+.link--yellow:hover {
+  color: var(--link-2--highlight);
+}
+
+.link--blue {
+  color: var(--link-3);
+}
+
+.link--blue:hover {
+  color: var(--link-3--highlight);
 }

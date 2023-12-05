@@ -59,7 +59,7 @@
     }
 
     .nav-link {
-        color: var(--link);
+        color: var(--link-1);
         font-size: 2.2rem;
         padding: 1rem 1rem;
         display: inline-block;
@@ -74,7 +74,7 @@
     }
 
     .nav-link:hover {
-        color: var(--link--highlight);
+        color: var(--link-1--highlight);
     }
 
     .nav__main .nav-link {

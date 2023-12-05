@@ -1,9 +1,9 @@
 <template>
     <div class="game__preview">
-        <a :href="detailLink">
+        <a :href="props.game.itch_io_link">
             <img class="game__preview__image" :src="props.game.image" :alt="props.game.title" />
         </a>
-        <a :href="detailLink">
+        <a :href="props.game.itch_io_link">
             <h3 class="game__preview__title">{{ props.game.title }}</h3>
         </a>
         <p class="game__preview__description"><h4>{{ props.game.genre }}</h4></p>
@@ -14,11 +14,8 @@
 
 <script setup lang="ts">
 import type { Game } from '@/types/game';
-import { computed } from 'vue';
 
 const props = defineProps<{game: Game}>()
-
-const detailLink = computed<string>(() => `/game/${props.game.id}`);
 </script>
 
 <style scoped>
@@ -33,17 +30,18 @@ const detailLink = computed<string>(() => `/game/${props.game.id}`);
     margin-right: auto;
     margin-left: auto;
     display: block;
+    border: 2px solid black;
 }
 
 .game__preview__title {
-    color: var(--link);
+    color: var(--link-1);
     font-size: 2.2rem;
     text-align: center;
     margin-top: 0.5rem;
 }
 
 .game__preview__title:hover { 
-    color: var(--link--highlight);
+    color: var(--link-1--highlight);
 }
 
 .game__preview__description {

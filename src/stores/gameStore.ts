@@ -18,6 +18,7 @@ export const useGameStore = defineStore<'GameStore', GameState, GameStoreGetters
     games: [
       {
         id: "rhythm-invoker",
+        itch_io_link: "https://vanhoras.itch.io/rhythm-invoker",
         title: "Rhythm Invoker",
         genre: "Gaelic Rock Rhythm Game",
         image: "src/assets/images/games/RhythmInvoker/rhythm_invoker_title_3.png",
@@ -26,6 +27,7 @@ export const useGameStore = defineStore<'GameStore', GameState, GameStoreGetters
       },
       {
         id: "sands-of-magic",
+        itch_io_link: "https://vanhoras.itch.io/sands-of-magic",
         title: "Sands of Magic",
         genre: "Point & Click Adventure Game",
         image: "src/assets/images/games/SandsOfMagic/Sands_of_Magic_small.png",
@@ -34,6 +36,7 @@ export const useGameStore = defineStore<'GameStore', GameState, GameStoreGetters
       },
       {
         id: "dungeon-swapper",
+        itch_io_link: "https://vanhoras.itch.io/dungeon-swapper",
         title: "Dungeon Swapper",
         genre: "Puzzle Game",
         image: "src/assets/images/games/DungeonSwapper/DungeonSwapper.png",
@@ -42,6 +45,7 @@ export const useGameStore = defineStore<'GameStore', GameState, GameStoreGetters
       },
       {
         id: "baby-turtle-protector",
+        itch_io_link: "https://howell-xr.itch.io/baby-turtle-protector",
         title: "Baby Turtle Protector",
         genre: "VR Game",
         image: "src/assets/images/games/BabyTurtleProtector/BabyTurtleProtector.png",
@@ -50,6 +54,7 @@ export const useGameStore = defineStore<'GameStore', GameState, GameStoreGetters
       },
       {
         id: "gardenia-global-greenhouse",
+        itch_io_link: "https://emstergrace.itch.io/gardeniasglobalgreenhouse",
         title: "Gardenia's Global Greenhouse",
         genre: "Simulation",
         image: "src/assets/images/games/GardeniaGlobalGreenhouse/ggg.png",
@@ -58,6 +63,7 @@ export const useGameStore = defineStore<'GameStore', GameState, GameStoreGetters
       },
       {
         id: "lucky-journey",
+        itch_io_link: "https://vanhoras.itch.io/luckys-journey",
         title: "Lucky's Journey",
         genre: "Platformer",
         image: "src/assets/images/games/LuckyJourney/LuckyJourney.png",

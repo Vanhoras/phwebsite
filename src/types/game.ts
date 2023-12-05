@@ -1,5 +1,6 @@
 export interface Game {
     id: string;
+    itch_io_link: string;
     title: string;
     genre: string;
     image: string;

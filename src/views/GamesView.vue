@@ -1,14 +1,13 @@
 <template>
-  <div class="background"/>
-    <main class="hexagon" >
-        <div class="lg-crop">
-          <img src="@/assets/images/games/header.png" alt="Games Overview Header" class="games__overview__image"/>
-        </div>
-        <div class="games__overview__content">
-            <GamePreview v-for="game in games" :key="game.id" :game="game"/>
-        </div>
-    </main>
-  </template>
+  <div>
+    <div class="lg-crop">
+      <img src="@/assets/images/games/header.png" alt="Games Overview Header" class="games__overview__image"/>
+    </div>
+    <div class="games__overview__content">
+        <GamePreview v-for="game in games" :key="game.id" :game="game"/>
+    </div>
+  </div>
+</template>
   
   
   <script setup lang="ts">

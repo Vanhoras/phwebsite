@@ -1,18 +1,15 @@
 <template>
-  <div class="background"/>
-  <main class="hexagon" >
-    <div class="home">
-      
-      <img src="@/assets/images/paul.jpg" alt="Paul Hielscher" class="self-image"/>
+  <div class="home">
+    
+    <img src="@/assets/images/paul.jpg" alt="Paul Hielscher" class="self-image"/>
 
-      <div class="introduction__container">
-        <p class="introduction__greeting">Hey,</p>
-        <p class="introduction__self">I'm Paul</p>
-        <h2 class="introduction__job">Developer</h2>
-        <p class="introduction__text">skilled in everything from <RouterLink class="link--blue" to="/websites">Websites</RouterLink>,<br/> over <RouterLink class="link--yellow" to="/software">Financing Software</RouterLink> to <RouterLink to="/games" class="link--magenta">Game Development</RouterLink></p>
-      </div>
+    <div class="introduction__container">
+      <p class="introduction__greeting">Hey,</p>
+      <p class="introduction__self">I'm Paul Hielscher</p>
+      <h2 class="introduction__job">Developer</h2>
+      <p class="introduction__text">skilled in everything from <RouterLink class="link--blue" to="/websites">Websites</RouterLink>,<br/> over <RouterLink class="link--yellow" to="/software">Financing Software</RouterLink> to <RouterLink to="/games" class="link--magenta">Game Development</RouterLink></p>
     </div>
-  </main>
+  </div>
 </template>
 
 
@@ -21,11 +18,6 @@
 </script>
 
 <style scoped>
-  main {
-    height: 100vh;
-    position: relative;
-    padding-top: 7.5rem;
-  }
 
   .home {
     position: relative;
@@ -36,12 +28,12 @@
     position: absolute;
     top: 18.9rem;
     clip-path: polygon(31% 0, 73% 0%, 95% 49%, 73% 98%, 31% 98%, 11% 49%);
-    left: 49.1rem;
+    left: 4rem;
   }
 
   .introduction__container {
     position: absolute;
-    left: 105rem;
+    left: 60rem;
     top: 10rem;
   }
 
@@ -69,5 +61,21 @@
     margin-top: 2.5rem;
   }
 
+  @media (min-width: 1024px) {
+    .introduction__container {
+      left: 60rem;
+      top: 10rem;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .self-image {
+      left: 49.1rem;
+    }
+
+    .introduction__container {
+      left: 105rem;
+    }
+  }
 </style>
 

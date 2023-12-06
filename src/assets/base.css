@@ -76,6 +76,7 @@ main {
   height: 100%;
   position: relative;
   padding-top: 7.5rem;
+  min-height: calc(100vh - 7.5rem);
 }
 
 .hexagon {
@@ -89,6 +90,10 @@ main {
   background: linear-gradient(150deg, var(--black) 0%, #1d1f20 100%);
   top: 0;
   left: 0;
+}
+
+li {
+  list-style: none;
 }
 
 h4 {
@@ -118,4 +123,9 @@ h4 {
 
 .link--blue:hover {
   color: var(--link-3--highlight);
+}
+
+
+.display--none {
+  display: none;
 }

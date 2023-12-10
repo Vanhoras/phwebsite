@@ -1,6 +1,7 @@
 :root {
   /* Dark Mode Colors*/
   --black: #151718;
+  --grey-1: #323337;
 
   --link-1: #ff31d0;
   --link-1--highlight: #d7bfd1;
@@ -13,6 +14,7 @@
 
   --divider: #888888;
   --text: rgba(235, 235, 235, 0.64);
+  --text-dark: rgba(142, 142, 142, 0.64);
 }
 
 /* semantic color variables for this project 

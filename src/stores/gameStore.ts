@@ -23,7 +23,7 @@ export const useGameStore = defineStore<'GameStore', GameState, GameStoreGetters
         genre: "Gaelic Rock Rhythm Game",
         image: "src/assets/images/games/RhythmInvoker/rhythm_invoker_title_3.png",
         role: "Game Design & Programming",
-        short_description: "Entry in the 1 week long 1-Button Game Jam 2023."
+        short_description: "Invoke the God of Death to combat the corrupted Guardian Spirits. Hit precise notes, channel mystical energies and rack up your score."
       },
       {
         id: "sands-of-magic",
@@ -32,7 +32,7 @@ export const useGameStore = defineStore<'GameStore', GameState, GameStoreGetters
         genre: "Point & Click Adventure Game",
         image: "src/assets/images/games/SandsOfMagic/Sands_of_Magic_small.png",
         role: "Game Design & Programming",
-        short_description: "Entry in the 2 week long Adventure Game Jam 2023."
+        short_description: "A city in the desert is on the verge of disaster, as the orb which provided the magic lifeblood of the city becomes unstable. Uncover the ancient legends of the orb as the Archmage and prevent the destruction of the city."
       },
       {
         id: "dungeon-swapper",
@@ -41,7 +41,7 @@ export const useGameStore = defineStore<'GameStore', GameState, GameStoreGetters
         genre: "Puzzle Game",
         image: "src/assets/images/games/DungeonSwapper/DungeonSwapper.png",
         role: "Game Design & Programming",
-        short_description: "Made in 1 week in September 2023."
+        short_description: "Find your way through an undead infested dungeon using only the ability to swap position with enemies."
       },
       {
         id: "baby-turtle-protector",
@@ -50,7 +50,7 @@ export const useGameStore = defineStore<'GameStore', GameState, GameStoreGetters
         genre: "VR Game",
         image: "src/assets/images/games/BabyTurtleProtector/BabyTurtleProtector.png",
         role: "Programming",
-        short_description: "8th Place in the VR Game Jam 2023."
+        short_description: "Deliver your baby turtles to their mother in the sea! Use your bow to fend off enemies, and teleport from one to turtle to the next!"
       },
       {
         id: "gardenia-global-greenhouse",
@@ -59,7 +59,7 @@ export const useGameStore = defineStore<'GameStore', GameState, GameStoreGetters
         genre: "Simulation",
         image: "src/assets/images/games/GardeniaGlobalGreenhouse/ggg.png",
         role: "Programming",
-        short_description: "Entry in the 48 hour Cozy Spring Game Jam 2023."
+        short_description: "Welcome to Gardenia’s Global Greenhouse! Home to some of the rarest plants from around the world, Gardenia’s Greenhouse is a place of learning and reflection. Find all the plants to fill up your booklet and receive a special sticker to commemorate your visit!"
       },
       {
         id: "lucky-journey",
@@ -68,7 +68,7 @@ export const useGameStore = defineStore<'GameStore', GameState, GameStoreGetters
         genre: "Platformer",
         image: "src/assets/images/games/LuckyJourney/LuckyJourney.png",
         role: "Game Developer",
-        short_description: "Created in high school."
+        short_description: "The first game I created as a child, using only Java and sprites made in paint."
       }
   ]}),
 

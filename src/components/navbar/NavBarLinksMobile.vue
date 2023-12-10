@@ -16,7 +16,7 @@
                     <RouterLink to="/games" class="nav-link link--magenta">Games</RouterLink>
                 </li>
                 <li>
-                    <RouterLink to="/resume" class="nav-link link--magenta">Resume</RouterLink>
+                    <RouterLink to="/contact" class="nav-link link--magenta">Contact</RouterLink>
                 </li>
             </ul>
         </div>

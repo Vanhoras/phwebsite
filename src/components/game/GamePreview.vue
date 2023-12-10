@@ -12,40 +12,42 @@
     </div>
 </template>
 
-<script setup lang="ts">
-import type { Game } from '@/types/game';
 
-const props = defineProps<{game: Game}>()
+<script setup lang="ts">
+    import type { Game } from '@/types/game';
+
+    const props = defineProps<{game: Game}>()
 </script>
 
+
 <style scoped>
-.game__preview {
-    margin-bottom: 4rem;
-    width: 31.5rem;
-}
+    .game__preview {
+        margin-bottom: 4rem;
+        width: 31.5rem;
+    }
 
-.game__preview__image {
-    height: 25rem;
-    width: 31.5rem;
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
-    border: 2px solid black;
-}
+    .game__preview__image {
+        height: 25rem;
+        width: 31.5rem;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        border: 2px solid black;
+    }
 
-.game__preview__title {
-    color: var(--link-1);
-    font-size: 2.2rem;
-    text-align: center;
-    margin-top: 0.5rem;
-}
+    .game__preview__title {
+        color: var(--link-1);
+        font-size: 2.2rem;
+        text-align: center;
+        margin-top: 0.5rem;
+    }
 
-.game__preview__title:hover { 
-    color: var(--link-1--highlight);
-}
+    .game__preview__title:hover { 
+        color: var(--link-1--highlight);
+    }
 
-.game__preview__description {
-    text-align: center;
-    white-space: pre-line;
-}
+    .game__preview__description {
+        text-align: center;
+        white-space: pre-line;
+    }
 </style>

@@ -24,7 +24,7 @@
   <style scoped>
     
     .games__overview__content {
-        max-width: 100rem;
+        max-width: 110rem;
         margin: auto;
         padding-top: 5rem;
         display: flex;

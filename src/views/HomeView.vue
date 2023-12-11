@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     
-    <img src="@/assets/images/paul.jpg" alt="Paul Hielscher" class="self-image"/>
+    <img src="@/assets/images/paul.jpg" alt="Paul Hielscher" class="self-image" loading="eager" rel="preload"/>
 
     <div class="introduction__container">
       <p class="introduction__greeting">Hey,</p>

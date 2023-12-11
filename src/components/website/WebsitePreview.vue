@@ -1,6 +1,6 @@
 <template>
     <div class="website-preview" :style="`flex-direction: ${directionLeft ? 'row' : 'row-reverse'}`">
-        <img class="website__image" :src="$props.website.image" :alt="props.website.title" />
+        <img class="website__image" :src="$props.website.image" :alt="props.website.title" rel="preload"/>
         <div class="website__container">
             <div class="website__header"><h3 class="website__title" :style="`color: ${props.website.color}`">{{ props.website.title }}</h3><span class="website__time">{{ props.website.time }}</span></div>
             <p class="website__role">{{ props.website.role }}</p>
@@ -32,12 +32,12 @@
         justify-content: space-around;
         max-width: 110rem;
         margin: auto;
-        margin-bottom: 10rem;
+        padding-bottom: 10rem;
     }
 
     .website__image {
         width: 50rem;
-        height: 35rem;
+       
     }
 
     .website__container {
@@ -57,7 +57,7 @@
     .website__time {
         font-size: 1.5rem;
         color: var(--text-dark);
-        margin-top: 1.7rem;
+        margin-top: 1.8rem;
     }
 
     .website__role {

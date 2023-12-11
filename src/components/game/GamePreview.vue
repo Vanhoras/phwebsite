@@ -1,7 +1,7 @@
 <template>
     <div class="game__preview">
         <a :href="props.game.itch_io_link">
-            <img class="game__preview__image" :src="props.game.image" :alt="props.game.title" />
+            <img class="game__preview__image" :src="props.game.image" :alt="props.game.title" rel="preload" />
         </a>
         <a :href="props.game.itch_io_link">
             <h3 class="game__preview__title">{{ props.game.title }}</h3>

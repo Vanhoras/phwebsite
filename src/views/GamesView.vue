@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="lg-crop">
-      <img src="@/assets/images/games/header.png" alt="Games Overview Header" class="games__overview__image"/>
+      <img src="@/assets/images/games/header.png" alt="Games Overview Header" class="games__overview__image" rel="preload"/>
     </div>
     <div class="games__overview__content">
         <GamePreview v-for="game in games" :key="game.id" :game="game"/>

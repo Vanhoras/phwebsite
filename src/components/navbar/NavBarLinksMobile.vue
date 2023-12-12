@@ -7,16 +7,16 @@
         <div class="navbar-mobile__container hide display--none" ref="mobileContainer">
             <ul class="nav__links">
                 <li>
-                    <RouterLink to="/websites" class="nav-link link--magenta">Websites</RouterLink>
+                    <RouterLink to="/websites" class="nav-link link--magenta" @click="closeMobileMenu()">Websites</RouterLink>
                 </li>
                 <li>
-                    <RouterLink to="/software" class="nav-link link--magenta">Software</RouterLink>
+                    <RouterLink to="/software" class="nav-link link--magenta" @click="closeMobileMenu()">Software</RouterLink>
                 </li>
                 <li>
-                    <RouterLink to="/games" class="nav-link link--magenta">Games</RouterLink>
+                    <RouterLink to="/games" class="nav-link link--magenta" @click="closeMobileMenu()">Games</RouterLink>
                 </li>
                 <li>
-                    <RouterLink to="/contact" class="nav-link link--magenta">Contact</RouterLink>
+                    <RouterLink to="/contact" class="nav-link link--magenta" @click="closeMobileMenu()">Contact</RouterLink>
                 </li>
             </ul>
         </div>
@@ -24,17 +24,34 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
+    import { ref, watch } from 'vue'
+    import { useAppStore } from '@/stores/appStore';
+
+    const store = useAppStore();
 
     const mobileContainer = ref<HTMLElement | null>(null);
 
     const toggleMobileMenu = () => {
+        store.toggleMobileNavbar();
+    }
+
+    const closeMobileMenu = () => {
+      store.closeMobileNavbar();
+  }
+
+
+    watch(() => store.mobileNavbarOpen, () => {
         if (mobileContainer.value == null) return;
 
-        mobileContainer.value.classList.toggle("hide");
-        mobileContainer.value.classList.toggle("open");
-        mobileContainer.value.classList.remove("display--none");
-    }
+        if (store.mobileNavbarOpen) {
+            mobileContainer.value.classList.remove("display--none");
+            mobileContainer.value.classList.remove("hide");
+            mobileContainer.value.classList.add("open");
+        } else {
+            mobileContainer.value.classList.add("hide");
+            mobileContainer.value.classList.remove("open");
+        }
+    });
 
 </script>
 

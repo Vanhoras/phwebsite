@@ -7,13 +7,23 @@
       <p class="introduction__greeting">Hey,</p>
       <p class="introduction__self">I'm Paul Hielscher</p>
       <h2 class="introduction__job">Developer</h2>
-      <p class="introduction__text">skilled in everything from <RouterLink class="link--blue" to="/websites">Websites</RouterLink>,<br/> over <RouterLink class="link--yellow" to="/software">Financing Software</RouterLink> to <RouterLink to="/games" class="link--magenta">Game Development</RouterLink></p>
+      <p class="introduction__text">skilled in everything from <RouterLink class="link--blue" to="/websites" @click="closeMobileMenu()"
+        >Websites</RouterLink>,<br/> over <RouterLink class="link--yellow" to="/software" @click="closeMobileMenu()"
+        >Financing Software</RouterLink> to <RouterLink to="/games" class="link--magenta" @click="closeMobileMenu()"
+        >Game Development</RouterLink></p>
     </div>
   </div>
 </template>
 
 
 <script setup lang="ts">
+  import { useAppStore } from '@/stores/appStore';
+
+  const store = useAppStore();
+
+  const closeMobileMenu = () => {
+      store.closeMobileNavbar();
+  }
 
 </script>
 

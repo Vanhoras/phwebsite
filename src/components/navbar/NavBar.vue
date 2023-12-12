@@ -2,7 +2,7 @@
     <header>
         <nav>
             <div class="nav__main">
-                <RouterLink to="/" class="nav-link link--magenta"><h1>Paul Hielscher</h1></RouterLink>
+                <RouterLink to="/" class="nav-link link--magenta" @click="closeMobileMenu()"><h1>Paul Hielscher</h1></RouterLink>
             </div>
             <NavBarLinksDesktop class="show--desktop"/>
             <NavBarLinksMobile class="show--mobile"/>
@@ -11,8 +11,15 @@
 </template>
 
 <script setup lang="ts">
-import NavBarLinksDesktop from './NavBarLinksDesktop.vue';
-import NavBarLinksMobile from './NavBarLinksMobile.vue';
+    import NavBarLinksDesktop from './NavBarLinksDesktop.vue';
+    import NavBarLinksMobile from './NavBarLinksMobile.vue';
+    import { useAppStore } from '@/stores/appStore';
+
+    const store = useAppStore();
+
+    const closeMobileMenu = () => {
+        store.closeMobileNavbar();
+    }
 
 </script>
 

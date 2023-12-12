@@ -18,7 +18,7 @@
       <SocialLink 
         name="github" 
         link="https://github.com/vanhoras" 
-        image="src/assets/icons/github.svg" 
+        image="src/assets/icons/github2.svg" 
       />
     </div>
 </template>

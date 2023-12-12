@@ -36,14 +36,14 @@
     }
 
     .game__preview__title {
-        color: var(--link-1);
+        color: var(--accent-1);
         font-size: 2.2rem;
         text-align: center;
         margin-top: 0.5rem;
     }
 
     .game__preview__title:hover { 
-        color: var(--link-1--highlight);
+        color: var(--accent-1--highlight);
     }
 
     .game__preview__description {

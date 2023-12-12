@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+    import { ref } from 'vue'
 
     const mobileContainer = ref<HTMLElement | null>(null);
 
@@ -47,14 +47,14 @@ import { ref } from 'vue'
     .menu-button {
         position: absolute;
         width: 5rem;
-        color: var(--link-1);
+        color: var(--accent-1);
         cursor: pointer;
         top: -2.3rem;
         right: 0;
     }
 
     .menu-button:hover {
-        color: var(--link-1--highlight)
+        color: var(--accent-1--highlight)
     }
 
     @keyframes fade-in {

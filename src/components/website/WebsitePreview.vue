@@ -32,16 +32,17 @@
         justify-content: space-around;
         max-width: 110rem;
         margin: auto;
-        padding-bottom: 10rem;
+        padding-bottom: 9rem;
     }
 
     .website__image {
-        width: 50rem;
-       
+        width: 100%;
+        padding: 0rem 1rem 1rem 1rem;
     }
 
     .website__container {
-        width: 50rem;
+        width: 100%;
+        padding: 0rem 1rem;
     }
 
     .website__header {
@@ -85,6 +86,16 @@
         justify-content: start;
         max-width: 50rem;
         margin-top: 1rem;
+    }
+
+    @media (min-width: 500px) {
+        .website__image {
+            width: 50rem;
+        }
+
+        .website__container {
+            width: 50rem;
+        }
     }
 
 </style>

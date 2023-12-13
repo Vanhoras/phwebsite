@@ -7,16 +7,13 @@
         <div class="navbar-mobile__container hide display--none" ref="mobileContainer">
             <ul class="nav__links">
                 <li>
-                    <RouterLink to="/websites" class="nav-link link--magenta" @click="closeMobileMenu()">Websites</RouterLink>
+                    <RouterLink :to="{name: 'websites'}" class="nav-link link--magenta" @click="closeMobileMenu()">References</RouterLink>
                 </li>
                 <li>
-                    <RouterLink to="/software" class="nav-link link--magenta" @click="closeMobileMenu()">Software</RouterLink>
+                    <RouterLink :to="{name: 'games'}" class="nav-link link--magenta" @click="closeMobileMenu()">Games</RouterLink>
                 </li>
                 <li>
-                    <RouterLink to="/games" class="nav-link link--magenta" @click="closeMobileMenu()">Games</RouterLink>
-                </li>
-                <li>
-                    <RouterLink to="/contact" class="nav-link link--magenta" @click="closeMobileMenu()">Contact</RouterLink>
+                    <RouterLink :to="{name: 'contact'}" class="nav-link link--magenta" @click="closeMobileMenu()">Contact</RouterLink>
                 </li>
             </ul>
         </div>

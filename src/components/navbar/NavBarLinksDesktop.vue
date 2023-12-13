@@ -1,16 +1,13 @@
 <template>
     <ul class="nav__links">
         <li class="nav-link__wrapper">
-            <RouterLink to="/websites" class="nav-link link--magenta">Websites</RouterLink>
+            <RouterLink :to="{name: 'websites'}"  class="nav-link link--magenta">References</RouterLink>
         </li>
         <li class="nav-link__wrapper">
-            <RouterLink to="/software" class="nav-link link--magenta">Software</RouterLink>
+            <RouterLink :to="{name: 'games'}" class="nav-link link--magenta">Games</RouterLink>
         </li>
         <li class="nav-link__wrapper">
-            <RouterLink to="/games" class="nav-link link--magenta">Games</RouterLink>
-        </li>
-        <li class="nav-link__wrapper">
-            <RouterLink to="/contact" class="nav-link link--magenta">Contact</RouterLink>
+            <RouterLink :to="{name: 'contact'}" class="nav-link link--magenta">Contact</RouterLink>
         </li>
     </ul>
 </template>

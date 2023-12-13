@@ -1,5 +1,5 @@
 <template>
-  <div class="websites">
+  <div id="websites_view">
     <WebsitePreview v-for="(website, index) in websites" :key="website.id" :website="website" :direction-left="(index % 2) == 0"/>
   </div>
 </template>
@@ -18,10 +18,10 @@
 
 <style scoped>
 
-  .websites {
+  #websites_view {
       max-width: 110rem;
       margin: auto;
-      padding-top: 5rem;
+      padding-top: 7.5rem;
   }
 
 </style>

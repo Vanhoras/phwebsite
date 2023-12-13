@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="games_view">
     <div class="lg-crop">
       <img src="@/assets/images/games/header.png" alt="Games Overview Header" class="games__overview__image" rel="preload"/>
     </div>
@@ -22,6 +22,10 @@
   </script>
   
   <style scoped>
+
+    #games_view {
+      padding-top: 7.5rem;
+    }
     
     .games__overview__content {
         max-width: 110rem;

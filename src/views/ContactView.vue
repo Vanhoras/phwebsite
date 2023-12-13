@@ -1,8 +1,7 @@
 <template>
-    <div class="contact">
-
+    <div id="contact_view">
+      <h2 class="contact__title">CONTACT</h2>
       <ContactForm />
-      <SocialLinks />
       
     </div>
 </template>
@@ -10,12 +9,23 @@
   
 <script setup lang="ts">
 import ContactForm from '@/components/contact/ContactForm.vue'
-import SocialLinks from '@/components/contact/SocialLinks.vue'
 
 </script>
 
 
 <style scoped>
+
+  #contact_view {
+    padding-bottom: 15rem;
+    padding-top: 15rem;
+  }
+
+  .contact__title {
+    margin: auto;
+    text-align: center;
+    font-size: 6rem;
+    font-weight: bold;
+  }
 
 </style>
   

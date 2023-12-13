@@ -25,7 +25,7 @@
   
   
 <script setup lang="ts">
-import SocialLink from '@/components/contact/SocialLink.vue'
+  import SocialLink from '@/components/footer/SocialLink.vue'
 
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     
-    <img src="@/assets/images/paul.jpg" alt="Paul Hielscher" class="self-image" loading="eager" rel="preload"/>
+    <img src="@/assets/images/paul.jpg" alt="Paul Hielscher" class="self-image image--hexagonal" loading="eager" rel="preload"/>
 
     <div class="introduction__container">
       <p class="introduction__greeting">Hey,</p>
@@ -35,10 +35,8 @@
   }
 
   .self-image {
-    width: 35rem;
     position: absolute;
     top: 18.9rem;
-    clip-path: polygon(31% 0, 73% 0%, 95% 49%, 73% 98%, 31% 98%, 11% 49%);
     left: 4rem;
   }
 

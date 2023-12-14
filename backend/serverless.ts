@@ -1,11 +1,11 @@
 import type { AWS } from '@serverless/typescript';
 
-import hello from '@functions/hello';
+import sendEmail from '@adapter/in/SendEmail';
 
 const serverlessConfiguration: AWS = {
   service: 'backend',
   frameworkVersion: '3',
-  plugins: ['serverless-esbuild'],
+  plugins: ['serverless-esbuild', 'serverless-offline'],
   provider: {
     name: 'aws',
     runtime: 'nodejs14.x',
@@ -19,7 +19,7 @@ const serverlessConfiguration: AWS = {
     },
   },
   // import the function via paths
-  functions: { hello },
+  functions: { sendEmail },
   package: { individually: true },
   custom: {
     esbuild: {

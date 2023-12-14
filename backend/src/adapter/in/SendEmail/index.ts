@@ -7,7 +7,7 @@ export default {
     {
       http: {
         method: 'post',
-        path: 'hello',
+        path: 'send_email',
         request: {
           schemas: {
             'application/json': schema,

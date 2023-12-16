@@ -30,7 +30,9 @@
     text-align: center;
     font-size: 6rem;
     font-weight: bold;
-    margin-bottom: 5rem;
+    color: var(--text-dark);
+    margin-bottom: 6rem;
+    margin-top: 3rem;
   }
 
 </style>

@@ -15,8 +15,12 @@
   --accent-4: #e31b6d;
 
   --divider: #888888;
-  --text: #ebebeba3;
-  --text-dark: #8e8e8ea3;
+  --text: #ffffffd6;
+  --text-dark: #ebebeba3;
+  --text-dark2: #8e8e8ea3;
+
+  --success: #0de00d;
+  --failure: #f11924;
 }
 
 /* semantic color variables for this project 

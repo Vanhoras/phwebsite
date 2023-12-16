@@ -57,12 +57,12 @@
 
     .website__time {
         font-size: 1.5rem;
-        color: var(--text-dark);
+        color: var(--text-dark2);
         margin-top: 1.8rem;
     }
 
     .website__role {
-        color: var(--text-dark);
+        color: var(--text-dark2);
         font-size: 2rem;
         margin-top: -1rem;
         margin-bottom: 0.6rem;

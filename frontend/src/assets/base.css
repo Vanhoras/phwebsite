@@ -89,6 +89,8 @@ main {
 
 .hexagon {
   background-image: url("@/assets/images/hexagon.png");
+  background-size: 40rem;
+  background-position: calc(50vw - 18.4rem) 0;
 }
 
 .background {
@@ -98,6 +100,23 @@ main {
   background: linear-gradient(150deg, var(--black) 0%, #1d1f20 100%);
   top: 0;
   left: 0;
+}
+
+.image--hexagonal {
+  width: 31rem;
+  clip-path: polygon(31% 0, 73% 0%, 94.7% 49%, 73% 98%, 31.4% 98%, 11% 48.6%);
+}
+
+
+@media (min-width: 1024px) {
+  .hexagon {
+    background-size: 45.1rem;
+    background-position: 0 0;
+  }
+  
+  .image--hexagonal {
+    width: 35rem;
+  }
 }
 
 li {
@@ -136,9 +155,4 @@ h4 {
 
 .display--none {
   display: none;
-}
-
-.image--hexagonal {
-  width: 35rem;
-  clip-path: polygon(31% 0, 73% 0%, 94.7% 49%, 73% 98%, 31.4% 98%, 11% 48.6%);
 }

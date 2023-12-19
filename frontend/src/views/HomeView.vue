@@ -33,47 +33,83 @@
     position: relative;
     min-height: 100vh;
   }
-
+  
   .self-image {
     position: absolute;
-    top: 18.9rem;
-    left: 4rem;
+    top: 15.9rem;
+    left: calc(50vw - 14.8rem);
   }
 
   .introduction__container {
-    position: absolute;
-    left: 60rem;
-    top: 10rem;
+    position: relative;
+    width: 100%;
+    padding: 40rem 1rem 0rem 1rem;
+    text-align: center;
   }
 
   .introduction__greeting {
-    font-size: 5.5rem;
+    font-size: 4.5rem;
     font-weight: normal;
   }
 
   .introduction__self {
-    font-size: 5.5rem;
+    font-size: 4.5rem;
     font-weight: normal;
     margin-top: -2rem;
   }
 
   .introduction__job {
-    font-size: 8.5rem;
+    font-size: 7.5rem;
     font-weight: normal;
-    margin-top: -1rem;
+    margin-top: -2rem;
     margin-left: -0.4rem;
   }
 
   .introduction__text {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: normal;
-    margin-top: 2.5rem;
+    margin-top: 0rem;
+  }
+
+  @media (min-width: 500px) {
+    .introduction__container {
+      margin-left: calc(50vw - 26rem);
+      width: auto;
+      max-width: 55rem;
+    }
+
+    .introduction__greeting {
+      font-size: 5.5rem;
+    }
+
+    .introduction__self {
+      font-size: 5.5rem;
+    }
+
+    .introduction__job {
+      font-size: 8.5rem;
+      margin-top: -1rem;
+    }
+
+    .introduction__text {
+      font-size: 2.5rem;
+      margin-top: 2.5rem;
+    }
   }
 
   @media (min-width: 1024px) {
+    .self-image {
+      top: 18.9rem;
+      left: 4rem;
+    }
+
     .introduction__container {
+      position: absolute;
       left: 60rem;
       top: 10rem;
+      padding: 0;
+      margin-left: 0;
+      text-align: left;
     }
   }
 

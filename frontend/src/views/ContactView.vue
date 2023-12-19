@@ -1,6 +1,6 @@
 <template>
-    <div id="contact_view">
-      <h2 class="contact__title">CONTACT</h2>
+    <div id="contact_view" ref="contactView">
+      <h2 class="contact__title" ref="contactTitle">CONTACT</h2>
       <ContactForm />
       
     </div>
@@ -8,7 +8,34 @@
   
   
 <script setup lang="ts">
-import ContactForm from '@/components/contact/ContactForm.vue'
+  import { ref, onMounted, onBeforeUnmount } from 'vue';
+  import ContactForm from '@/components/contact/ContactForm.vue';
+  import { useAppStore } from '@/stores/appStore';
+
+  const appStore = useAppStore();
+
+  const contactView = ref<HTMLElement | null>(null);
+  const contactTitle = ref<HTMLElement | null>(null);
+  
+  const handleInView = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      console.log('checking intersection2!', entry);
+      if (entry.isIntersecting && appStore.scrollDown) {
+        contactTitle.value?.classList.toggle("fade-in--bottom");
+      }
+    });
+  };
+  
+  const observer = new IntersectionObserver(handleInView);
+
+  onMounted(() => {
+    if (!contactTitle.value) return;
+    observer.observe(contactTitle.value);
+  });
+
+  onBeforeUnmount(() => {
+    observer.disconnect();
+  });
 
 </script>
 
@@ -17,7 +44,8 @@ import ContactForm from '@/components/contact/ContactForm.vue'
 
   #contact_view {
     padding-bottom: 15rem;
-    padding-top: 7rem;
+    padding-top: 15rem;
+    min-height: calc(100vh - 15.5rem);
   }
 
   .contact__title {
@@ -28,6 +56,61 @@ import ContactForm from '@/components/contact/ContactForm.vue'
     color: var(--text-dark);
     margin-bottom: 8rem;
   }
+
+
+  @keyframes keyframes_fade-in--right {
+  0% {
+    transform: translate(10rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes keyframes_fade-in--left {
+  0% {
+    transform: translate(-10rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes keyframes_fade-in-bottom {
+  0% {
+    transform: translate(0, 8rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.fade-in--right {
+  animation-name: keyframes_fade-in--right;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.39,.58,.57,1);
+}
+
+.fade-in--left {
+  animation-name: keyframes_fade-in--left;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.39,.58,.57,1);
+}
+
+.fade-in--bottom {
+  animation-name: keyframes_fade-in--bottom;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.39,.58,.57,1);
+}
 
 </style>
   

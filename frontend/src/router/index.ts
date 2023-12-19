@@ -34,7 +34,6 @@ const router = createRouter({
     }
   ],
   scrollBehavior(to, from, savedPosition) {
-    console.log(to)
     if (to.hash) {
       return {
         el: to.hash,

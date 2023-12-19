@@ -1,5 +1,5 @@
 <template>
-  <div id="games_view">
+  <div id="games_view" ref="gamesView">
     <div class="lg-crop">
       <img src="@/assets/images/games/header.png" alt="Games Overview Header" class="games__overview__image" rel="preload"/>
     </div>
@@ -10,16 +10,39 @@
 </template>
   
   
-  <script setup lang="ts">
-    import { useGameStore } from '@/stores/gameStore';
-    import type { Game } from '@/types/game';
-    import { computed } from 'vue';
-    import GamePreview from '@/components/game/GamePreview.vue'
+<script setup lang="ts">
+  import { ref, onMounted, onBeforeUnmount } from 'vue';
+  import { useGameStore } from '@/stores/gameStore';
+  import type { Game } from '@/types/game';
+  import { computed } from 'vue';
+  import GamePreview from '@/components/game/GamePreview.vue'
+  import { useAppStore } from '@/stores/appStore';
 
-    const store = useGameStore();
+  const appStore = useAppStore();
+  const gamesStore = useGameStore();
+  const games = computed<Game[]>(() => gamesStore.games)
 
-    const games = computed<Game[]>(() => store.games)
-  </script>
+  const gamesView = ref<HTMLElement | null>(null);
+
+  const handleInView = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && appStore.scrollDown) {
+        gamesView.value?.classList.toggle("fade-in--bottom");
+      }
+    });
+  };
+  
+  const observer = new IntersectionObserver(handleInView);
+
+  onMounted(() => {
+    if (!gamesView.value) return;
+    observer.observe(gamesView.value);
+  });
+
+  onBeforeUnmount(() => {
+    observer.disconnect();
+  });
+</script>
   
   <style scoped>
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="website-preview" :style="`flex-direction: ${directionLeft ? 'row' : 'row-reverse'}`">
+    <div class="website-preview" :style="`flex-direction: ${directionLeft ? 'row' : 'row-reverse'}`" ref="websitePreview">
         <img class="website__image" :src="$props.website.image" :alt="props.website.title" rel="preload"/>
         <div class="website__container">
             <div class="website__header"><h3 class="website__title" :style="`color: ${props.website.color}`">{{ props.website.title }}</h3><span class="website__time">{{ props.website.time }}</span></div>
@@ -17,10 +17,45 @@
 
 
 <script setup lang="ts">
+    import { ref, onMounted, onBeforeUnmount } from 'vue';
     import type { Website } from '@/types/website';
-    import TechDiv from '@/components/website/TechDiv.vue'
+    import TechDiv from '@/components/website/TechDiv.vue';
+    import { useAppStore } from '@/stores/appStore';
 
+    const appStore = useAppStore();
+    
     const props = defineProps<{website: Website, directionLeft: boolean}>()
+
+    const websitePreview = ref<HTMLElement | null>(null);
+
+    const handleInView = (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting && appStore.scrollDown) {
+                if (props.directionLeft) {
+                    websitePreview.value?.classList.add("fade-in--right");
+                    setTimeout(() => {
+                        websitePreview.value?.classList.remove("fade-in--right");
+                    }, 750);
+                } else {
+                    websitePreview.value?.classList.add("fade-in--left");
+                    setTimeout(() => {
+                        websitePreview.value?.classList.remove("fade-in--left");
+                    }, 750);
+                }
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(handleInView);
+
+    onMounted(() => {
+        if (!websitePreview.value) return;
+        observer.observe(websitePreview.value);
+    });
+
+    onBeforeUnmount(() => {
+        observer.disconnect();
+    });
 </script>
 
 

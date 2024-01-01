@@ -156,3 +156,58 @@ h4 {
 .display--none {
   display: none;
 }
+
+
+@keyframes keyframes_fade-in--right {
+  0% {
+    transform: translate(30rem);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes keyframes_fade-in--left {
+  0% {
+    transform: translate(-30rem);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes keyframes_fade-in--bottom {
+  0% {
+    transform: translate(0, 30rem);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.fade-in--right {
+  animation-name: keyframes_fade-in--right;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+.fade-in--left {
+  animation-name: keyframes_fade-in--left;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+.fade-in--bottom {
+  animation-name: keyframes_fade-in--bottom;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}

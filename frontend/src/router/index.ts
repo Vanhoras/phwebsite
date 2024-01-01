@@ -9,6 +9,11 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'default',
+      component: HomeView
+    },
+    {
+      path: '/',
       name: 'home',
       component: HomeView
     },
@@ -34,43 +39,48 @@ const router = createRouter({
     }
   ],
   scrollBehavior(to, from, savedPosition) {
+    console.log("savedPosition", savedPosition);
+    console.log("name", to.name);
     if (to.hash) {
       return {
         el: to.hash,
         behavior: 'smooth',
-      }
+      };
     }
     if (to.name === 'home') {
       return {
         top: 0,
         behavior: 'smooth',
-      }
+      };
     }
     if (to.name === 'games') {
       return {
         el: '#games_view',
         behavior: 'smooth',
-      }
+      };
     }
     if (to.name === 'websites') {
       return {
         el: '#websites_view',
         behavior: 'smooth',
-      }
+      };
     }
     if (to.name === 'software') {
       return {
         el: '#software_view',
         behavior: 'smooth',
-      }
+      };
     }
     if (to.name === 'contact') {
       return {
         el: '#contact_view',
         behavior: 'smooth',
-      }
+      };
+    }
+    if (savedPosition) {
+      return savedPosition;
     }
   },
-})
+});
 
 export default router

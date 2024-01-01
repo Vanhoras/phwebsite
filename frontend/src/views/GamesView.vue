@@ -27,7 +27,10 @@
   const handleInView = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting && appStore.scrollDown) {
-        gamesView.value?.classList.toggle("fade-in--bottom");
+        gamesView.value?.classList.add("fade-in--bottom");
+        setTimeout(() => {
+          gamesView.value?.classList.remove("fade-in--bottom");
+        }, 750);
       }
     });
   };

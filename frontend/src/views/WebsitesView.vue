@@ -1,7 +1,7 @@
 <template>
   <div id="websites_view" ref="websiteView">
     <h2 class="websites__title">REFERENCES</h2>
-    <WebsitePreview v-for="(website, index) in websites" :key="website.id" :website="website" :direction-left="(index % 2) == 0"/>
+    <WebsitePreview v-for="(website, index) in websites" :key="website.id" :website="website" :direction-left="(index % 2) == 0" :id="website.id" />
   </div>
 </template>
 

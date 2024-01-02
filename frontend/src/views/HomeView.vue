@@ -12,6 +12,13 @@
         >Financing Software</RouterLink> to <RouterLink :to="{name: 'games'}" class="link--magenta" @click="closeMobileMenu()"
         >Game Development</RouterLink></p>
     </div>
+
+    <RouterLink :to="{name: 'websites'}" @click="closeMobileMenu()">
+      <svg class="scroll-down-arrow" viewBox="16.5 53.141 167 93.72" >
+        <path d="M166.471 56.5l-66.674 66.218-66.219-66.674c-3.826-3.852-10.323-3.874-14.175-.048s-3.874 10.322-.049 14.175l73.281 73.786c3.826 3.852 10.323 3.874 14.175.049l73.786-73.281c3.852-3.826 3.874-10.323.049-14.175s-10.027-3.876-14.174-.05z"></path>
+      </svg>
+    </RouterLink>
+    
   </div>
 </template>
 
@@ -37,7 +44,7 @@
   .self-image {
     position: absolute;
     top: 15.9rem;
-    left: calc(50vw - 14.8rem);
+    left: calc(50vw - 16.4rem);
   }
 
   .introduction__container {
@@ -71,6 +78,10 @@
     margin-top: 0rem;
   }
 
+  .scroll-down-arrow {
+    display: none;
+  }
+
   @media (min-width: 500px) {
     .introduction__container {
       margin-left: calc(50vw - 26rem);
@@ -100,26 +111,26 @@
   @media (min-width: 1024px) {
     .self-image {
       top: 18.9rem;
-      left: 4rem;
+      left: calc(50vw - 41.1rem);
     }
 
     .introduction__container {
       position: absolute;
-      left: 60rem;
+      left: calc(50vw + 14.5rem);
       top: 10rem;
       padding: 0;
       margin-left: 0;
       text-align: left;
     }
-  }
 
-  @media (min-width: 1536px) {
-    .self-image {
-      left: 49.1rem;
-    }
-
-    .introduction__container {
-      left: 105rem;
+    .scroll-down-arrow {
+      display: block;
+      fill: var(--text-dark);
+      width: 10rem;
+      transform: scale(100%, 50%);
+      position: absolute;
+      bottom: 7rem;
+      left: calc(50vw - 5rem);
     }
   }
 </style>

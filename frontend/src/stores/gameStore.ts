@@ -68,7 +68,7 @@ export const useGameStore = defineStore<'GameStore', GameState, GameStoreGetters
         genre: "Platformer",
         image: "src/assets/images/games/LuckyJourney/LuckyJourney.png",
         role: "Game Developer",
-        short_description: "The first game I created as a child, using only Java and sprites made in paint."
+        short_description: "The first game I created as a child, using only Java and sprites made in Microsoft Paint."
       }
   ]}),
 

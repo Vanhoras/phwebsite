@@ -67,7 +67,8 @@ const router = createRouter({
     }
     if (to.name === 'software') {
       return {
-        el: '#software_view',
+        el: '#el_leasing',
+        top: 120,
         behavior: 'smooth',
       };
     }

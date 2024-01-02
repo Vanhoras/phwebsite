@@ -90,7 +90,7 @@ main {
 .hexagon {
   background-image: url("@/assets/images/hexagon.png");
   background-size: 40rem;
-  background-position: calc(50vw - 18.4rem) 0;
+  background-position: calc(50vw - 20rem) 0;
 }
 
 .background {
@@ -111,7 +111,7 @@ main {
 @media (min-width: 1024px) {
   .hexagon {
     background-size: 45.1rem;
-    background-position: 0 0;
+    background-position: calc(50vw) 0;
   }
   
   .image--hexagonal {

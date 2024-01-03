@@ -1,42 +1,14 @@
 <template>
-  
   <NavBar />
-
-  <div class="background" />
-  <main class="hexagon" >
-    <HomeView />
-    <WebsitesView />
-    <GamesView />
-    <ContactView />
-  </main>
+    
+  <RouterView />
 
   <Footer />
 </template>
 
 <script setup lang="ts">
- import { onMounted } from 'vue';
-  import NavBar from '@/components/navbar/NavBar.vue'
-  import HomeView from '@/views/HomeView.vue'
-  import GamesView from '@/views/GamesView.vue'
-  import WebsitesView from '@/views/WebsitesView.vue'
-  import ContactView from '@/views/ContactView.vue'
-  import Footer from '@/components/footer/Footer.vue'
-  import { useAppStore } from '@/stores/appStore';
-
-  const store = useAppStore();
-
-  let prevScrollY = window.scrollY || document.documentElement.scrollTop;
-
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY || document.documentElement.scrollTop;
-    
-    store.scrollDown = currentScrollY > prevScrollY;
-
-    prevScrollY = currentScrollY;
-  }
-
-  onMounted(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-  });
-
+  import { RouterView } from 'vue-router'
+  import NavBar from '@/components/navbar/NavBar.vue';
+  import Footer from '@/components/footer/Footer.vue';
+  
 </script>

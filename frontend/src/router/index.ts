@@ -1,8 +1,6 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import GamesView from '../views/GamesView.vue'
-import WebsitesView from '../views/WebsitesView.vue'
-import ContactView from '../views/ContactView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import MainView from '../views/MainView.vue';
+import LegalView from '../views/LegalView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,32 +8,37 @@ const router = createRouter({
     {
       path: '/',
       name: 'default',
-      component: HomeView
+      component: MainView
     },
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: MainView
     },
     {
       path: '/',
       name: 'games',
-      component: GamesView
+      component: MainView
     },
     {
       path: '/',
       name: 'websites',
-      component: WebsitesView
+      component: MainView
     },
     {
       path: '/',
       name: 'software',
-      component: WebsitesView
+      component: MainView
     },
     {
       path: '/',
       name: 'contact',
-      component: ContactView
+      component: MainView
+    },
+    {
+      path: '/legal',
+      name: 'legal',
+      component: LegalView
     }
   ],
   scrollBehavior(to, from, savedPosition) {
@@ -75,6 +78,12 @@ const router = createRouter({
     if (to.name === 'contact') {
       return {
         el: '#contact_view',
+        behavior: 'smooth',
+      };
+    }
+    if (to.name === 'legal') {
+      return {
+        top: 0,
         behavior: 'smooth',
       };
     }

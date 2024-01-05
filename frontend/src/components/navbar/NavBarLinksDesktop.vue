@@ -9,9 +9,6 @@
         <li class="nav-link__wrapper">
             <RouterLink :to="{name: 'contact'}" class="nav-link link--magenta">Contact</RouterLink>
         </li>
-        <li class="nav-link__wrapper">
-            <RouterLink :to="{name: 'legal'}" class="nav-link link--magenta">Legal Notice</RouterLink>
-        </li>
     </ul>
 </template>
 

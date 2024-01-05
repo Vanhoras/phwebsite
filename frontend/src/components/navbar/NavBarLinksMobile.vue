@@ -15,9 +15,6 @@
                 <li>
                     <RouterLink :to="{name: 'contact'}" class="nav-link link--magenta" @click="closeMobileMenu()">Contact</RouterLink>
                 </li>
-                <li>
-                    <RouterLink :to="{name: 'legal'}" class="nav-link link--magenta" @click="closeMobileMenu()">Legal Notice</RouterLink>
-                </li>
             </ul>
         </div>
     </div>

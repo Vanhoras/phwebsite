@@ -123,9 +123,21 @@ li {
   list-style: none;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 h4 {
   display: inline;
   font-weight: bold;
+}
+
+.link--white {
+  color: var(--text);
+}
+
+.link--white:hover {
+  color: var(--accent-1);
 }
 
 .link--magenta {
@@ -152,9 +164,12 @@ h4 {
   color: var(--accent-3--highlight);
 }
 
-
 .display--none {
-  display: none;
+  display: none !important;
+}
+
+.border--none {
+  border: none !important;
 }
 
 

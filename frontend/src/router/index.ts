@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import MainView from '../views/MainView.vue';
 import LegalView from '../views/LegalView.vue';
+import PrivacyView from '../views/PrivacyView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,6 +40,11 @@ const router = createRouter({
       path: '/legal',
       name: 'legal',
       component: LegalView
+    },
+    {
+      path: '/data-privacy',
+      name: 'privacy',
+      component: PrivacyView
     }
   ],
   scrollBehavior(to, from, savedPosition) {
@@ -84,7 +90,11 @@ const router = createRouter({
     if (to.name === 'legal') {
       return {
         top: 0,
-        behavior: 'smooth',
+      };
+    }
+    if (to.name === 'privacy') {
+      return {
+        top: 0,
       };
     }
     if (savedPosition) {

@@ -51,10 +51,6 @@
     font-weight: bold;
   }
 
-  .bold {
-    font-weight: bold;
-  }
-
 </style>
   
   

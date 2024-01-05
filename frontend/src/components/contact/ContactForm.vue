@@ -5,6 +5,14 @@
         <input class="text-input" placeholder="Enter email" type="email" v-model="formData.email" required>
 
         <textarea placeholder="Your Message" type="text" v-model="formData.message" required />
+
+        <div class="privacy-agreement">
+            <label class="checkbox__container">I agree to the 
+                <input type="checkbox" class="checkbox__input" v-model="formData.privacy" required id="privacy-checkbox" >
+                <span class="checkbox__checkmark"></span>
+            </label>
+            <RouterLink :to="{name: 'privacy'}" class="privacy-link link--white" target="_blank">Privacy Policy</RouterLink>
+        </div>
         
         <input class="submit-button" value="SUBMIT" type="submit" ref="submitButton">
         <img src="@/assets//icons/spinner.svg" alt="loading..." rel="preload" class="loading-spinner display--none" ref="loadingSpinner" />
@@ -29,7 +37,8 @@
     const formData = ref({
         name: '',
         email: '',
-        message: ''
+        message: '',
+        privacy: false,
     });
 
     const submit = async () => {
@@ -110,6 +119,88 @@
         border-color: var(--accent-1);
     }
 
+    .privacy-agreement {
+        position: absolute;
+        bottom: 2.3rem;
+    }
+
+    .privacy-link {
+        position: absolute;
+        top: 2rem;
+        right: 0rem;
+    }
+
+    .checkbox__container {
+        position: relative;
+        display: inline-block;
+        padding-left: 35px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .checkbox__input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .checkbox__checkmark {
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        height: 2.5rem;
+        width: 2.5rem;
+        background-color: transparent;
+        border: 1px solid var(--text);
+    }
+
+    .checkbox__container:hover .checkbox__checkmark {
+        border-color: var(--accent-1);
+    }
+
+    .checkbox__container:hover .checkbox__checkmark:after {
+        border-color: var(--accent-1);
+    }
+
+    .checkbox__input:focus ~ .checkbox__checkmark {
+        border-color: var(--accent-3);
+    }
+
+    .checkbox__checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid var(--text);
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+    }
+
+    .checkbox__input:checked ~ .checkbox__checkmark:after {
+        display: block;
+    }
+
+    @media (min-width: 400px) {
+        .privacy-link {
+            position: relative;
+            top: 0rem;
+            margin-left: 0.5rem;
+        }
+
+        .checkbox__checkmark {
+            top: 0;
+        }
+
+        .privacy-agreement {
+            bottom: 1.3rem;
+        }
+    }
+
     @keyframes rotate {
         0% {
             transform: rotate(0deg);
@@ -157,12 +248,12 @@
 
     .notification--success {
         color: var(--success);
-        bottom: 1.6rem;
+        bottom: -2.6rem;
     }
 
     .notification--failure {
         color: var(--failure);
-        bottom: 0.2rem;
+        bottom: -3.2rem;
     }
 
 </style>

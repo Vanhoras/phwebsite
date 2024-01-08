@@ -172,6 +172,9 @@ h4 {
   border: none !important;
 }
 
+.opacity--zero {
+  opacity: 0;
+}
 
 @keyframes keyframes_fade-in--right {
   0% {
@@ -206,23 +209,39 @@ h4 {
   }
 }
 
+@keyframes keyframes_fade-in--none {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .fade-in--right {
   animation-name: keyframes_fade-in--right;
   animation-duration: 0.75s;
   animation-fill-mode: forwards;
-  animation-timing-function: ease;
+  animation-timing-function: cubic-bezier(.35,.04,.25,1.09);
 }
 
 .fade-in--left {
   animation-name: keyframes_fade-in--left;
   animation-duration: 0.75s;
   animation-fill-mode: forwards;
-  animation-timing-function: ease;
+  animation-timing-function: cubic-bezier(.35,.04,.25,1.09);
 }
 
 .fade-in--bottom {
   animation-name: keyframes_fade-in--bottom;
   animation-duration: 0.75s;
   animation-fill-mode: forwards;
-  animation-timing-function: ease;
+  animation-timing-function: cubic-bezier(.35,.04,.25,1.09);
+}
+
+.fade-in--none {
+  animation-name: keyframes_fade-in--none;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.35,.04,.25,1.09);
 }

@@ -20,7 +20,8 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
         id: "obi",
         title: "OBI",
         description: "OBI is Europe's third largest DIY retail chain.",
-        points: ["Development of a new microservice online shop with marketplace functionality."],
+        points: ["Development of a new microservice based online shop with marketplace functionality.",
+                  "Maintenance and further development of a"],
         role: "Fullstack Developer",
         time: "2021 - 2023",
         techStack: ["Java", "NodeJS", "Typescript", "Vue", "AWS", "SQL"],
@@ -38,7 +39,7 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
       {
         id: "el_leasing",
         title: "el-Leasing",
-        description: "el-Leasing leases work bikes for companies.",
+        description: "el-Leasing leases work bikes for companies and employees.",
         points: ["Leading a team to create an automated contract conclusion process, in order to simplify the customer acquisition process."],
         role: "Lead Developer",
         time: "2021",

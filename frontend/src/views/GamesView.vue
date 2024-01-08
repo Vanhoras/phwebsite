@@ -1,40 +1,53 @@
 <template>
   <div id="games_view" ref="gamesView">
     <div class="lg-crop">
-      <img src="@/assets/images/games/header.png" alt="Games Overview Header" class="games__overview__image" rel="preload"/>
+      <img
+        src="@/assets/images/games/header.png"
+        alt="Games Overview Header"
+        class="games__overview__image"
+        rel="preload"
+      />
     </div>
-    <div class="games__overview__content">
-        <GamePreview v-for="game in games" :key="game.id" :game="game"/>
+    <div class="games__overview__content" ref="gamesContainer">
+      <GamePreview
+        v-for="(game, index) in games"
+        :key="game.id"
+        :game="game"
+        :order="index"
+        :gamesPerRow="gamesPerRow"
+      />
     </div>
   </div>
 </template>
-  
-  
+
 <script setup lang="ts">
   import { ref, onMounted, onBeforeUnmount } from 'vue';
   import { useGameStore } from '@/stores/gameStore';
   import type { Game } from '@/types/game';
   import { computed } from 'vue';
-  import GamePreview from '@/components/game/GamePreview.vue'
+  import GamePreview from '@/components/game/GamePreview.vue';
   import { useAppStore } from '@/stores/appStore';
 
   const appStore = useAppStore();
   const gamesStore = useGameStore();
-  const games = computed<Game[]>(() => gamesStore.games)
+  const games = computed<Game[]>(() => gamesStore.games);
 
   const gamesView = ref<HTMLElement | null>(null);
+
+  // currently hardcoded. If the number of games per row changes due to design calculate it instead.
+  const gamesPerRow = window.innerWidth > 945 ? 3 : window.innerWidth > 629 ? 2 : 1;
 
   const handleInView = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting && appStore.scrollDown) {
-        gamesView.value?.classList.add("fade-in--bottom");
+        gamesView.value?.classList.add('fade-in--bottom');
         setTimeout(() => {
-          gamesView.value?.classList.remove("fade-in--bottom");
+          gamesView.value?.classList.remove('fade-in--bottom');
         }, 750);
       }
     });
   };
-  
+
   const observer = new IntersectionObserver(handleInView);
 
   onMounted(() => {
@@ -46,47 +59,43 @@
     observer.disconnect();
   });
 </script>
-  
-  <style scoped>
 
-    #games_view {
-      padding-top: 7.5rem;
-    }
-    
-    .games__overview__content {
-        max-width: 110rem;
-        margin: auto;
-        padding-top: 5rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+<style scoped>
+  #games_view {
+    padding-top: 7.5rem;
+  }
+
+  .games__overview__content {
+    max-width: 110rem;
+    margin: auto;
+    padding-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .lg-crop {
+    overflow: hidden;
+    position: relative;
+    height: 21.3rem;
+  }
+
+  .games__overview__image {
+    width: 1024px;
+    position: absolute;
+    right: calc((100% - 1024px) / 2);
+  }
+
+  @media (min-width: 1024px) {
+    .games__overview__image {
+      width: 100%;
+      position: relative;
+      right: 0;
     }
 
     .lg-crop {
-      overflow: hidden;
-      position: relative;
-      height: 21.3rem;
+      overflow: auto;
+      height: auto;
     }
-
-    .games__overview__image {
-      width: 1024px;
-      position: absolute;
-      right: calc((100% - 1024px) / 2);
-    }
-
-    @media (min-width: 1024px) {
-      .games__overview__image {
-        width: 100%;
-        position: relative;
-        right: 0;
-      }
-
-      .lg-crop {
-        overflow: auto;
-        height: auto;
-      }
-    }
-  </style>
-
-
-  
+  }
+</style>

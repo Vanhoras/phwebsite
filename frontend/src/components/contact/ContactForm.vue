@@ -1,261 +1,366 @@
 <template>
-    <form class="contact-form" @submit.prevent="submit">
-        <input class="text-input" placeholder="Name" type="text" v-model="formData.name" required>
-    
-        <input class="text-input" placeholder="Enter email" type="email" v-model="formData.email" required>
+  <form class="contact-form" @submit.prevent="submit">
+    <input
+      class="text-input opacity--zero"
+      placeholder="Name"
+      type="text"
+      v-model="formData.name"
+      required
+      ref="nameInput"
+    />
 
-        <textarea placeholder="Your Message" type="text" v-model="formData.message" required />
+    <input
+      class="text-input opacity--zero"
+      placeholder="Enter email"
+      type="email"
+      v-model="formData.email"
+      required
+      ref="emailInput"
+    />
 
-        <div class="privacy-agreement">
-            <label class="checkbox__container">I agree to the 
-                <input type="checkbox" class="checkbox__input" v-model="formData.privacy" required id="privacy-checkbox" >
-                <span class="checkbox__checkmark"></span>
-            </label>
-            <RouterLink :to="{name: 'privacy'}" class="privacy-link link--white" target="_blank">Privacy Policy</RouterLink>
-        </div>
-        
-        <input class="submit-button" value="SUBMIT" type="submit" ref="submitButton">
-        <img src="@/assets//icons/spinner.svg" alt="loading..." rel="preload" class="loading-spinner display--none" ref="loadingSpinner" />
-        <span class="notification notification--success display--none" ref="notificationSuccess">Email sent successfully</span>
-        <span class="notification notification--failure display--none" ref="notificationFailure">Sorry, the email could not be sent.<br/>Please attempt to send it again later.</span>
-    </form>
+    <textarea
+      class="opacity--zero"
+      placeholder="Your Message"
+      type="text"
+      v-model="formData.message"
+      required
+      ref="textInput"
+    />
+
+    <div class="privacy-agreement opacity--zero" ref="privacyCheckbox">
+      <label class="checkbox__container"
+        >I agree to the
+        <input
+          type="checkbox"
+          class="checkbox__input"
+          v-model="formData.privacy"
+          required
+          id="privacy-checkbox"
+        />
+        <span class="checkbox__checkmark"></span>
+      </label>
+      <RouterLink :to="{ name: 'privacy' }" class="privacy-link link--white" target="_blank"
+        >Privacy Policy</RouterLink
+      >
+    </div>
+
+    <input class="submit-button opacity--zero" value="SUBMIT" type="submit" ref="submitButton" />
+    <img
+      src="@/assets//icons/spinner.svg"
+      alt="loading..."
+      rel="preload"
+      class="loading-spinner display--none"
+      ref="loadingSpinner"
+    />
+    <span class="notification notification--success display--none" ref="notificationSuccess"
+      >Email sent successfully</span
+    >
+    <span class="notification notification--failure display--none" ref="notificationFailure"
+      >Sorry, the email could not be sent.<br />Please attempt to send it again later.</span
+    >
+  </form>
 </template>
 
-
 <script setup lang="ts">
-    import { ref } from 'vue';
-    import { useAppStore } from '@/stores/appStore';
+  import { ref, onMounted, onBeforeUnmount } from 'vue';
+  import { useAppStore } from '@/stores/appStore';
 
-    const submitButton = ref<HTMLElement | null>(null);
-    const loadingSpinner = ref<HTMLElement | null>(null);
+  const appStore = useAppStore();
 
-    const notificationSuccess = ref<HTMLElement | null>(null);
-    const notificationFailure = ref<HTMLElement | null>(null);
+  const submitButton = ref<HTMLElement | null>(null);
+  const loadingSpinner = ref<HTMLElement | null>(null);
 
-    const store = useAppStore();
+  const notificationSuccess = ref<HTMLElement | null>(null);
+  const notificationFailure = ref<HTMLElement | null>(null);
 
-    const formData = ref({
-        name: '',
-        email: '',
-        message: '',
-        privacy: false,
-    });
+  const nameInput = ref<HTMLElement | null>(null);
+  const emailInput = ref<HTMLElement | null>(null);
+  const textInput = ref<HTMLElement | null>(null);
+  const privacyCheckbox = ref<HTMLElement | null>(null);
 
-    const submit = async () => {
-        console.log('resolving form action', formData.value);
+  const formData = ref({
+    name: '',
+    email: '',
+    message: '',
+    privacy: false,
+  });
 
-        submitButton.value?.setAttribute("value", "");
-        loadingSpinner.value?.classList.remove("display--none");
+  const submit = async () => {
+    console.log('resolving form action', formData.value);
 
-        const success = await store.sendEmail(formData.value.name, formData.value.email, formData.value.message);
+    submitButton.value?.setAttribute('value', '');
+    loadingSpinner.value?.classList.remove('display--none');
 
-        loadingSpinner.value?.classList.add("display--none");
-        submitButton.value?.setAttribute("value", "SUBMIT");
+    const success = await appStore.sendEmail(
+      formData.value.name,
+      formData.value.email,
+      formData.value.message,
+    );
 
-        if (success) {
-            notificationSuccess.value?.classList.remove("display--none");
-            setTimeout(() => {
-                notificationSuccess?.value?.classList.add("display--none");
-            }, 4000);
-        } else {
-            notificationFailure.value?.classList.remove("display--none");
-            setTimeout(() => {
-                notificationFailure?.value?.classList.add("display--none");
-            }, 4000);
-        }
+    loadingSpinner.value?.classList.add('display--none');
+    submitButton.value?.setAttribute('value', 'SUBMIT');
 
-        console.log('form result', success)
+    if (success) {
+      notificationSuccess.value?.classList.remove('display--none');
+      setTimeout(() => {
+        notificationSuccess?.value?.classList.add('display--none');
+      }, 4000);
+    } else {
+      notificationFailure.value?.classList.remove('display--none');
+      setTimeout(() => {
+        notificationFailure?.value?.classList.add('display--none');
+      }, 4000);
     }
 
+    console.log('form result', success);
+  };
+
+  const handleInView = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && appStore.scrollDown) {
+        if (entry.target.isEqualNode(nameInput.value)) {
+          setTimeout(() => {
+            entry.target.classList.remove('opacity--zero');
+            entry.target.classList.add('fade-in--right');
+          }, 50);
+        } else if (entry.target.isEqualNode(emailInput.value)) {
+          setTimeout(() => {
+            entry.target.classList.remove('opacity--zero');
+            entry.target.classList.add('fade-in--right');
+          }, 100);
+        } else if (entry.target.isEqualNode(textInput.value)) {
+          setTimeout(() => {
+            entry.target.classList.remove('opacity--zero');
+            entry.target.classList.add('fade-in--left');
+          }, 200);
+        } else if (entry.target.isEqualNode(privacyCheckbox.value)) {
+          setTimeout(() => {
+            entry.target.classList.remove('opacity--zero');
+            entry.target.classList.add('fade-in--left');
+          }, 300);
+        } else if (entry.target.isEqualNode(submitButton.value)) {
+          setTimeout(() => {
+            entry.target.classList.remove('opacity--zero');
+            entry.target.classList.add('fade-in--right');
+          }, 300);
+        }
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(handleInView);
+
+  onMounted(() => {
+    if (nameInput.value) {
+      observer.observe(nameInput.value);
+    }
+
+    if (emailInput.value) {
+      observer.observe(emailInput.value);
+    }
+
+    if (textInput.value) {
+      observer.observe(textInput.value);
+    }
+
+    if (privacyCheckbox.value) {
+      observer.observe(privacyCheckbox.value);
+    }
+
+    if (submitButton.value) {
+      observer.observe(submitButton.value);
+    }
+  });
+
+  onBeforeUnmount(() => {
+    observer.disconnect();
+  });
 </script>
 
-
 <style scoped>
+  .contact-form {
+    max-width: 57rem;
+    margin: auto;
+    padding: 0rem 1rem 5rem 1rem;
+    position: relative;
+  }
 
-    .contact-form {
-        max-width: 57rem;
-        margin: auto;
-        padding: 0rem 1rem 5rem 1rem;
-        position: relative;
-    }
+  textarea:focus,
+  .text-input:focus {
+    outline: none;
+  }
 
-    textarea:focus, .text-input:focus {
-        outline: none;
-    }
+  .text-input,
+  textarea {
+    display: block;
+    width: 100%;
+    background-color: var(--grey-1);
+    border: none;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    padding: 1rem 1.5rem;
+    color: var(--text);
+    font-size: 1.8rem;
+  }
 
-    .text-input, textarea {
-        display: block;
-        width: 100%;
-        background-color: var(--grey-1);
-        border: none;
-        margin-bottom: 1rem;
-        box-sizing: border-box;
-        padding: 1rem 1.5rem;
-        color: var(--text);
-        font-size: 1.8rem;
-    }
+  textarea {
+    height: 15rem;
+  }
 
-    textarea {
-        height: 15rem;
-    }
+  .submit-button {
+    display: block;
+    padding: 1rem 3rem;
+    min-width: 14.2rem;
+    color: var(--text);
+    background-color: transparent;
+    cursor: pointer;
+    border: 0.2rem solid;
+    font-size: 2.2rem;
+    position: absolute;
+    right: 1rem;
+    transition: all 0.5s;
+  }
 
-    .submit-button {
-        display: block;
-        padding: 1rem 3rem;
-        min-width: 14.2rem;
-        color: var(--text);
-        background-color: transparent;
-        cursor: pointer;
-        border: 0.2rem solid;
-        font-size: 2.2rem;
-        position: absolute;
-        right: 1rem;
-        transition: all 0.5s;
-    }
+  .submit-button:hover {
+    background-color: var(--accent-1);
+    color: var(--black);
+    border-color: var(--accent-1);
+  }
 
-    .submit-button:hover {
-        background-color: var(--accent-1);
-        color: var(--black);
-        border-color: var(--accent-1);
-    }
+  .privacy-agreement {
+    position: absolute;
+    bottom: 2.3rem;
+  }
 
-    .privacy-agreement {
-        position: absolute;
-        bottom: 2.3rem;
-    }
+  .privacy-link {
+    position: absolute;
+    top: 2rem;
+    right: 0rem;
+  }
 
+  .checkbox__container {
+    position: relative;
+    display: inline-block;
+    padding-left: 35px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .checkbox__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkbox__checkmark {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: transparent;
+    border: 1px solid var(--text);
+  }
+
+  .checkbox__container:hover .checkbox__checkmark {
+    border-color: var(--accent-1);
+  }
+
+  .checkbox__container:hover .checkbox__checkmark:after {
+    border-color: var(--accent-1);
+  }
+
+  .checkbox__input:focus ~ .checkbox__checkmark {
+    border-color: var(--accent-3);
+  }
+
+  .checkbox__checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--text);
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+
+  .checkbox__input:checked ~ .checkbox__checkmark:after {
+    display: block;
+  }
+
+  @media (min-width: 400px) {
     .privacy-link {
-        position: absolute;
-        top: 2rem;
-        right: 0rem;
-    }
-
-    .checkbox__container {
-        position: relative;
-        display: inline-block;
-        padding-left: 35px;
-        cursor: pointer;
-        user-select: none;
-    }
-
-    .checkbox__input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
+      position: relative;
+      top: 0rem;
+      margin-left: 0.5rem;
     }
 
     .checkbox__checkmark {
-        position: absolute;
-        top: 1rem;
-        left: 0;
-        height: 2.5rem;
-        width: 2.5rem;
-        background-color: transparent;
-        border: 1px solid var(--text);
+      top: 0;
     }
 
-    .checkbox__container:hover .checkbox__checkmark {
-        border-color: var(--accent-1);
+    .privacy-agreement {
+      bottom: 1.3rem;
     }
+  }
 
-    .checkbox__container:hover .checkbox__checkmark:after {
-        border-color: var(--accent-1);
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
     }
-
-    .checkbox__input:focus ~ .checkbox__checkmark {
-        border-color: var(--accent-3);
+    100% {
+      transform: rotate(360deg);
     }
+  }
 
-    .checkbox__checkmark:after {
-        content: "";
-        position: absolute;
-        display: none;
-        left: 9px;
-        top: 5px;
-        width: 5px;
-        height: 10px;
-        border: solid var(--text);
-        border-width: 0 3px 3px 0;
-        transform: rotate(45deg);
+  .loading-spinner {
+    width: 4.5rem;
+    height: 4.5em;
+    position: absolute;
+    right: 6rem;
+    bottom: -1rem;
+    animation: rotate 1.5s linear infinite;
+  }
+
+  @keyframes float_up_and_disappear {
+    0% {
+      transform: translate(0, 3rem);
+      opacity: 0.1;
     }
-
-    .checkbox__input:checked ~ .checkbox__checkmark:after {
-        display: block;
+    10% {
+      transform: translate(0, 0);
+      opacity: 1;
     }
-
-    @media (min-width: 400px) {
-        .privacy-link {
-            position: relative;
-            top: 0rem;
-            margin-left: 0.5rem;
-        }
-
-        .checkbox__checkmark {
-            top: 0;
-        }
-
-        .privacy-agreement {
-            bottom: 1.3rem;
-        }
+    80% {
+      transform: translate(0, 0);
+      opacity: 1;
     }
-
-    @keyframes rotate {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
+    100% {
+      transform: translate(0, 0);
+      opacity: 0;
     }
+  }
 
-    .loading-spinner {
-        width: 4.5rem;
-        height: 4.5em;
-        position: absolute;
-        right: 6rem;
-        bottom: -1rem;
-        animation: rotate 1.5s linear infinite;
-    }   
+  .notification {
+    position: absolute;
+    animation-name: float_up_and_disappear;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+  }
 
-    @keyframes float_up_and_disappear {
-        0% {
-            transform: translate(0, 3rem);
-            opacity: 0.1;
-        }
-        10% {
-            transform: translate(0, 0);
-            opacity: 1;
-        }
-        80% {
-            transform: translate(0, 0);
-            opacity: 1;
-        }
-        100% {
-            transform: translate(0, 0);
-            opacity: 0;
-        }
-    }
+  .notification--success {
+    color: var(--success);
+    bottom: -2.6rem;
+  }
 
-    .notification {
-        position: absolute;
-        animation-name: float_up_and_disappear;
-        animation-duration: 4s;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-in-out;
-    }
-
-    .notification--success {
-        color: var(--success);
-        bottom: -2.6rem;
-    }
-
-    .notification--failure {
-        color: var(--failure);
-        bottom: -3.2rem;
-    }
-
+  .notification--failure {
+    color: var(--failure);
+    bottom: -3.2rem;
+  }
 </style>
-  
-  

@@ -12,7 +12,6 @@
       <h3 class="game__preview__title">{{ props.game.title }}</h3>
     </a>
     <h4 class="game__preview__description">{{ props.game.genre }}</h4>
-    <!-- <p class="game__preview__description"><h4>Role:</h4> {{ props.game.role }}</p> -->
     <p class="game__preview__description">{{ props.game.short_description }}</p>
   </div>
 </template>
@@ -81,5 +80,9 @@
   .game__preview__description {
     text-align: center;
     white-space: pre-line;
+  }
+
+  h4 {
+    display: block;
   }
 </style>

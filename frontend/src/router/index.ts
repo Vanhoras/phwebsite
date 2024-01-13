@@ -48,8 +48,6 @@ const router = createRouter({
     }
   ],
   scrollBehavior(to, from, savedPosition) {
-    console.log("savedPosition", savedPosition);
-    console.log("name", to.name);
     if (to.hash) {
       return {
         el: to.hash,
@@ -64,13 +62,13 @@ const router = createRouter({
     }
     if (to.name === 'games') {
       return {
-        el: '#games_view',
+        el: '#gamesLocation',
         behavior: 'smooth',
       };
     }
     if (to.name === 'websites') {
       return {
-        el: '#websites_view',
+        el: '#referencesLocation',
         behavior: 'smooth',
       };
     }
@@ -83,7 +81,7 @@ const router = createRouter({
     }
     if (to.name === 'contact') {
       return {
-        el: '#contact_view',
+        el: '#contactLocation',
         behavior: 'smooth',
       };
     }
@@ -96,9 +94,6 @@ const router = createRouter({
       return {
         top: 0,
       };
-    }
-    if (savedPosition) {
-      return savedPosition;
     }
   },
 });

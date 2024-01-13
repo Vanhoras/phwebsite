@@ -5,7 +5,8 @@ import { sendEmailRequest } from '@/api/apiAdapter';
 
 export interface AppState {
   mobileNavbarOpen: boolean,
-  scrollDown: boolean
+  scrollDown: boolean,
+  sectionReached: number
 }
 
 interface AppStoreGetters extends PiniaStoreGetters<AppState>{
@@ -23,7 +24,8 @@ export type AppStore = Store<string, AppState, AppStoreGetters, AppStoreActions>
 export const useAppStore = defineStore<'AppStore', AppState, AppStoreGetters, AppStoreActions> ('AppStore', {
   state: (): AppState => ({
         mobileNavbarOpen: false,
-        scrollDown: true
+        scrollDown: true,
+        sectionReached: 0
     }),
 
   getters: {

@@ -6,33 +6,7 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, onMounted, onBeforeUnmount } from 'vue';
   import ContactForm from '@/components/contact/ContactForm.vue';
-  import { useAppStore } from '@/stores/appStore';
-
-  const appStore = useAppStore();
-
-  const contactView = ref<HTMLElement | null>(null);
-  const contactTitle = ref<HTMLElement | null>(null);
-
-  const handleInView = (entries: IntersectionObserverEntry[]) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting && appStore.scrollDown) {
-        contactTitle.value?.classList.add('fade-in--left');
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(handleInView);
-
-  onMounted(() => {
-    if (!contactTitle.value) return;
-    observer.observe(contactTitle.value);
-  });
-
-  onBeforeUnmount(() => {
-    observer.disconnect();
-  });
 </script>
 
 <style scoped>

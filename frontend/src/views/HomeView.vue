@@ -1,27 +1,42 @@
 <template>
   <div class="home">
-    
-    <img src="@/assets/images/paul.jpg" alt="Paul Hielscher" class="self-image image--hexagonal" loading="eager" rel="preload"/>
+    <img
+      src="@/assets/images/paul.jpg"
+      alt="Paul Hielscher"
+      class="self-image image--hexagonal"
+      loading="eager"
+      rel="preload"
+    />
 
     <div class="introduction__container">
       <p class="introduction__greeting">Hey,</p>
       <p class="introduction__self">I'm Paul Hielscher</p>
       <h2 class="introduction__job">Developer</h2>
-      <p class="introduction__text">skilled in everything from <RouterLink class="link--blue" :to="{name: 'websites'}" @click="closeMobileMenu()"
-        >Websites</RouterLink>,<br/> over <RouterLink class="link--yellow" :to="{name: 'software'}" @click="closeMobileMenu()"
-        >Financing Software</RouterLink> to <RouterLink :to="{name: 'games'}" class="link--magenta" @click="closeMobileMenu()"
-        >Game Development</RouterLink></p>
+      <p class="introduction__text">
+        skilled in everything from
+        <RouterLink class="link--blue" :to="{ name: 'websites' }" @click="closeMobileMenu()"
+          >Websites</RouterLink
+        >,<br />
+        over
+        <RouterLink class="link--yellow" :to="{ name: 'software' }" @click="closeMobileMenu()"
+          >Financing Software</RouterLink
+        >
+        to
+        <RouterLink :to="{ name: 'games' }" class="link--magenta" @click="closeMobileMenu()"
+          >Game Development</RouterLink
+        >
+      </p>
     </div>
 
-    <RouterLink :to="{name: 'websites'}" @click="closeMobileMenu()">
-      <svg class="scroll-down-arrow" viewBox="16.5 53.141 167 93.72" >
-        <path d="M166.471 56.5l-66.674 66.218-66.219-66.674c-3.826-3.852-10.323-3.874-14.175-.048s-3.874 10.322-.049 14.175l73.281 73.786c3.826 3.852 10.323 3.874 14.175.049l73.786-73.281c3.852-3.826 3.874-10.323.049-14.175s-10.027-3.876-14.174-.05z"></path>
+    <RouterLink :to="{ name: 'websites' }" @click="closeMobileMenu()">
+      <svg class="scroll-down-arrow" viewBox="16.5 53.141 167 93.72">
+        <path
+          d="M166.471 56.5l-66.674 66.218-66.219-66.674c-3.826-3.852-10.323-3.874-14.175-.048s-3.874 10.322-.049 14.175l73.281 73.786c3.826 3.852 10.323 3.874 14.175.049l73.786-73.281c3.852-3.826 3.874-10.323.049-14.175s-10.027-3.876-14.174-.05z"
+        ></path>
       </svg>
     </RouterLink>
-    
   </div>
 </template>
-
 
 <script setup lang="ts">
   import { useAppStore } from '@/stores/appStore';
@@ -29,18 +44,16 @@
   const store = useAppStore();
 
   const closeMobileMenu = () => {
-      store.closeMobileNavbar();
-  }
-
+    store.closeMobileNavbar();
+  };
 </script>
 
 <style scoped>
-
   .home {
     position: relative;
-    min-height: 100vh;
+    min-height: calc(100vh - 7.5rem);
   }
-  
+
   .self-image {
     position: absolute;
     top: 15.9rem;
@@ -129,9 +142,8 @@
       width: 10rem;
       transform: scale(100%, 50%);
       position: absolute;
-      bottom: 7rem;
+      bottom: -0.5rem;
       left: calc(50vw - 5rem);
     }
   }
 </style>
-

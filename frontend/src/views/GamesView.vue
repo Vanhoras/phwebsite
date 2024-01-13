@@ -21,14 +21,12 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, onMounted, onBeforeUnmount } from 'vue';
+  import { ref } from 'vue';
   import { useGameStore } from '@/stores/gameStore';
   import type { Game } from '@/types/game';
   import { computed } from 'vue';
   import GamePreview from '@/components/game/GamePreview.vue';
-  import { useAppStore } from '@/stores/appStore';
 
-  const appStore = useAppStore();
   const gamesStore = useGameStore();
   const games = computed<Game[]>(() => gamesStore.games);
 
@@ -36,28 +34,6 @@
 
   // currently hardcoded. If the number of games per row changes due to design calculate it instead.
   const gamesPerRow = window.innerWidth > 945 ? 3 : window.innerWidth > 629 ? 2 : 1;
-
-  const handleInView = (entries: IntersectionObserverEntry[]) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting && appStore.scrollDown) {
-        gamesView.value?.classList.add('fade-in--bottom');
-        setTimeout(() => {
-          gamesView.value?.classList.remove('fade-in--bottom');
-        }, 750);
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(handleInView);
-
-  onMounted(() => {
-    if (!gamesView.value) return;
-    observer.observe(gamesView.value);
-  });
-
-  onBeforeUnmount(() => {
-    observer.disconnect();
-  });
 </script>
 
 <style scoped>

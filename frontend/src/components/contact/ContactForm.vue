@@ -122,27 +122,27 @@
           setTimeout(() => {
             entry.target.classList.remove('opacity--zero');
             entry.target.classList.add('fade-in--right');
-          }, 50);
+          }, 250);
         } else if (entry.target.isEqualNode(emailInput.value)) {
           setTimeout(() => {
             entry.target.classList.remove('opacity--zero');
             entry.target.classList.add('fade-in--right');
-          }, 100);
+          }, 300);
         } else if (entry.target.isEqualNode(textInput.value)) {
           setTimeout(() => {
             entry.target.classList.remove('opacity--zero');
             entry.target.classList.add('fade-in--left');
-          }, 200);
+          }, 400);
         } else if (entry.target.isEqualNode(privacyCheckbox.value)) {
           setTimeout(() => {
             entry.target.classList.remove('opacity--zero');
             entry.target.classList.add('fade-in--left');
-          }, 300);
+          }, 500);
         } else if (entry.target.isEqualNode(submitButton.value)) {
           setTimeout(() => {
             entry.target.classList.remove('opacity--zero');
             entry.target.classList.add('fade-in--right');
-          }, 300);
+          }, 500);
         }
       }
     });

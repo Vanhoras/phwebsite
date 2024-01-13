@@ -8,43 +8,25 @@
       :website="website"
       :direction-left="index % 2 == 0"
       :id="website.id"
+      :lagBeforeShow="getLagBeforeShow(index)"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-  import { ref, onMounted, onBeforeUnmount } from 'vue';
   import { useWebsiteStore } from '@/stores/websiteStore';
   import type { Website } from '@/types/website';
   import { computed } from 'vue';
   import WebsitePreview from '@/components/website/WebsitePreview.vue';
-  import { useAppStore } from '@/stores/appStore';
 
-  const appStore = useAppStore();
   const websiteStore = useWebsiteStore();
   const websites = computed<Website[]>(() => websiteStore.websites);
 
-  const websiteView = ref<HTMLElement | null>(null);
-
-  const handleInView = (entries: IntersectionObserverEntry[]) => {
-    entries.forEach((entry) => {
-      console.log('checking intersection1!', entry);
-      if (entry.isIntersecting && appStore.scrollDown) {
-        console.log('Your component1 is in view!', entry, websiteView.value);
-      }
-    });
+  const getLagBeforeShow = (index: number) => {
+    if (index === 0) return 200;
+    if (index === 1) return 300;
+    return 0;
   };
-
-  const observer = new IntersectionObserver(handleInView);
-
-  onMounted(() => {
-    if (!websiteView.value) return;
-    observer.observe(websiteView.value);
-  });
-
-  onBeforeUnmount(() => {
-    observer.disconnect();
-  });
 </script>
 
 <style scoped>

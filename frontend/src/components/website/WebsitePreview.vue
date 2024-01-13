@@ -22,12 +22,13 @@
       <ul v-if="props.website.points">
         <li v-for="point in props.website.points" :key="point">{{ point }}</li>
       </ul>
-      <div class="tech-stack__container">
+      <div class="tech-stack__container" ref="techStackContainer">
         <TechDiv
           v-for="tech in props.website.techStack"
           :key="tech"
           :tech="tech"
           :color="props.website.color"
+          class="opacity--zero"
         />
       </div>
     </div>
@@ -39,18 +40,37 @@
   import type { Website } from '@/types/website';
   import TechDiv from '@/components/website/TechDiv.vue';
 
-  const props = defineProps<{ website: Website; directionLeft: boolean }>();
+  const props = defineProps<{
+    website: Website;
+    directionLeft: boolean;
+    lagBeforeShow: number;
+  }>();
 
   const websitePreview = ref<HTMLElement | null>(null);
+  const techStackContainer = ref<HTMLElement | null>(null);
 
   const handleInView = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        websitePreview.value?.classList.remove('opacity--zero');
-        if (props.directionLeft) {
-          websitePreview.value?.classList.add('fade-in--right');
-        } else {
-          websitePreview.value?.classList.add('fade-in--left');
+        setTimeout(() => {
+          websitePreview.value?.classList.remove('opacity--zero');
+          if (props.directionLeft) {
+            websitePreview.value?.classList.add('fade-in--right');
+          } else {
+            websitePreview.value?.classList.add('fade-in--left');
+          }
+        }, props.lagBeforeShow);
+
+        const techStack: HTMLCollection | undefined = techStackContainer.value?.children;
+
+        for (let i = 0; i < (techStack?.length || 0); i++) {
+          setTimeout(
+            () => {
+              techStack?.item(i)?.classList.remove('opacity--zero');
+              techStack?.item(i)?.classList.add('fade-in--none');
+            },
+            props.lagBeforeShow + i * 75 + 150,
+          );
         }
       }
     });

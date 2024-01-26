@@ -7,30 +7,34 @@
       <p>{{ ADDRESS_LINE_1 }}</p>
       <p>{{ ADDRESS_LINE_2 }}</p>
       <p>{{ ADDRESS_LINE_3 }}</p>
+      <p>{{ ADDRESS_LINE_4 }}</p>
       <h3>Contact</h3>
       <p><span class="bold">E-Mail:</span> {{ EMAIL }}</p>
     </div>
   </main>
 </template>
-  
-  
+
 <script setup lang="ts">
   import { useHead } from '@vueuse/head';
-  import { ADDRESS_LINE_1, ADDRESS_LINE_2, ADDRESS_LINE_3, EMAIL } from '@/assets/personalInfo';
+  import {
+    ADDRESS_LINE_1,
+    ADDRESS_LINE_2,
+    ADDRESS_LINE_3,
+    ADDRESS_LINE_4,
+    EMAIL,
+  } from '@/assets/personalInfo';
 
   useHead({
     meta: [
       {
         name: 'robots',
-        content: 'noindex'
-      }
-    ]
-  })
+        content: 'noindex',
+      },
+    ],
+  });
 </script>
 
-
 <style scoped>
-
   main {
     min-height: calc(100vh - 15.6rem);
   }
@@ -50,7 +54,4 @@
     margin-top: 2rem;
     font-weight: bold;
   }
-
 </style>
-  
-  

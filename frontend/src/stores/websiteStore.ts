@@ -2,6 +2,13 @@ import { defineStore, type Store } from 'pinia'
 import type { Website } from '@/types/website'
 import type { PiniaStoreGetters } from '@/types/pinia';
 
+import obiImage from "@/assets/images/websites/OBI/obi_cart1_small.png";
+import elLeasingImage from "@/assets/images/websites/El_leasing/eleasa_small.png";
+import postbankImage from "@/assets/images/websites/Postbank/postbank_small.jpg";
+import dwsSteuerberaterImage from "@/assets/images/websites/DWS_Steuerberater/azubi-portal-5_small.png";
+import ideenExpoImage from "@/assets/images/websites/IdeenExpo/ideenexpo_logo_small.jpg";
+import hsbcImage from "@/assets/images/websites/HSBC/transactionservices_small.png";
+
 export interface WebsiteState {
   websites: Website[]
 }
@@ -33,7 +40,7 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
                 {displayName: "OBI Poland", link: "https://www.obi.pl/"}, 
                 {displayName: "OBI Ungarn", link: "https://www.obi.hu/"}, 
                 {displayName: "OBI Czechia", link: "https://www.obi.cz/"}],
-        image: "src/assets/images/websites/OBI/obi_cart1_small.png",
+        image: obiImage,
         color: "#ff7e21",
       },
       {
@@ -44,7 +51,7 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
         role: "Lead Developer",
         time: "2021",
         techStack: ["Java", "Spring", "FreeMarker", "JavaScript", "CSS", "SQL"],
-        image: "src/assets/images/websites/El_leasing/eleasa_small.png",
+        image: elLeasingImage,
         color: "#ffd300",
       },
       {
@@ -56,7 +63,7 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
         role: "Software Developer, Consultant",
         time: "2020 - 2021",
         techStack: ["Java", "Gupta", "SQL", "Oracle DB", "Varial"],
-        image: "src/assets/images/websites/Postbank/postbank_small.jpg",
+        image: postbankImage,
         color: "#ffcd00",
       },
       {
@@ -69,7 +76,7 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
         time: "2020",
         techStack: ["Drupal 8", "PHP", "JavaScript", "HTML", "SCSS", "Twig"],
         links: [{displayName: "DWS Institut", link: "https://dws-institut.de"}],
-        image: "src/assets/images/websites/DWS_Steuerberater/azubi-portal-5_small.png",
+        image: dwsSteuerberaterImage,
         color: "#a72338",
       },
       {
@@ -80,7 +87,7 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
         role: "Fullstack Developer",
         time: "2019 - 2020",
         techStack: ["Java", "React", "JavaScript", "HTML", "CSS"],
-        image: "src/assets/images/websites/IdeenExpo/ideenexpo_logo_small.jpg",
+        image: ideenExpoImage,
         color: "#ed4119",
       },
       {
@@ -98,7 +105,7 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
                 {displayName: "Inka-Kag", link: "https://www.inka-kag.de/"}, 
                 {displayName: "HSBC-alternatives", link: "https://www.hsbc-alternatives.de/"}, 
                 {displayName: "HSBC-Karriere", link: "https://karriere.hsbc.de/"}],
-        image: "src/assets/images/websites/HSBC/transactionservices_small.png",
+        image: hsbcImage,
         color: "#db0011",
       },
   ]}),

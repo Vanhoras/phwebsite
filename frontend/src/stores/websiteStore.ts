@@ -6,7 +6,7 @@ import obiImage from "@/assets/images/websites/OBI/obi_cart1_small.png";
 import elLeasingImage from "@/assets/images/websites/El_leasing/eleasa_small.png";
 import postbankImage from "@/assets/images/websites/Postbank/postbank_small.jpg";
 import dwsSteuerberaterImage from "@/assets/images/websites/DWS_Steuerberater/azubi-portal-5_small.png";
-import ideenExpoImage from "@/assets/images/websites/ideenexpo.jpg";
+import ideenExpoImage from "@/assets/images/websites/ideenexpo.png";
 import hsbcImage from "@/assets/images/websites/HSBC/transactionservices_small.png";
 
 export interface WebsiteState {

@@ -2,12 +2,11 @@ import { defineStore, type Store } from 'pinia'
 import type { Website } from '@/types/website'
 import type { PiniaStoreGetters } from '@/types/pinia';
 
-import obiImage from "../assets/images/websites/OBI/obi_cart1_small.png";
-import elLeasingImage from "../assets/images/websites/El_leasing/eleasa_small.png";
-import postbankImage from "../assets/images/websites/Postbank/postbank_small.jpg";
-import dwsSteuerberaterImage from "../assets/images/websites/DWS_Steuerberater/azubi-portal-5_small.png";
-import ideenExpoImage from "../assets/images/websites/IdeenExpo/ideenexpo_logo_small.jpg";
-import hsbcImage from "../assets/images/websites/HSBC/transactionservices_small.png";
+import obiImage from "@/assets/images/websites/OBI/obi_cart1_small.png";
+import elLeasingImage from "@/assets/images/websites/El_leasing/eleasa_small.png";
+import postbankImage from "@/assets/images/websites/Postbank/postbank_small.jpg";
+import dwsSteuerberaterImage from "@/assets/images/websites/DWS_Steuerberater/azubi-portal-5_small.png";
+import hsbcImage from "@/assets/images/websites/HSBC/transactionservices_small.png";
 
 export interface WebsiteState {
   websites: Website[]
@@ -87,7 +86,7 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
         role: "Fullstack Developer",
         time: "2019 - 2020",
         techStack: ["Java", "React", "JavaScript", "HTML", "CSS"],
-        image: ideenExpoImage,
+        image: "",
         color: "#ed4119",
       },
       {

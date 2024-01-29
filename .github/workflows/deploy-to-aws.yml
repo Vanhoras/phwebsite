@@ -34,11 +34,11 @@ jobs:
         working-directory: ./frontend
         run: npm run build
         env:
-          EMAIL: ${{ secrets.EMAIL }}
-          ADDRESS_LINE_1: ${{ secrets.ADDRESS_LINE_1 }}
-          ADDRESS_LINE_2: ${{ secrets.ADDRESS_LINE_2 }}
-          ADDRESS_LINE_3: ${{ secrets.ADDRESS_LINE_3 }}
-          ADDRESS_LINE_4: ${{ secrets.ADDRESS_LINE_4 }}
+          VITE_EMAIL: ${{ secrets.EMAIL }}
+          VITE_ADDRESS_LINE_1: ${{ secrets.ADDRESS_LINE_1 }}
+          VITE_ADDRESS_LINE_2: ${{ secrets.ADDRESS_LINE_2 }}
+          VITE_ADDRESS_LINE_3: ${{ secrets.ADDRESS_LINE_3 }}
+          VITE_ADDRESS_LINE_4: ${{ secrets.ADDRESS_LINE_4 }}
 
       - name: S3 sync
         uses: jakejarvis/s3-sync-action@v0.5.1

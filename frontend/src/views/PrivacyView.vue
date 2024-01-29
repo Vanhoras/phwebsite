@@ -344,3 +344,4 @@
     list-style: outside;
   }
 </style>
+@/types/personalInfoI

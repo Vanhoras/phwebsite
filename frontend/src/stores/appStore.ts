@@ -1,7 +1,7 @@
 import { defineStore, type Store } from 'pinia'
 import type { PiniaStoreGetters } from '@/types/pinia';
 import type { SocialLinkI } from '@/types/socialLink';
-import type { PersonalInfo } from '@/types/personalInfo';
+import type { PersonalInfo } from '@/types/personalInfoI';
 
 import { sendEmailRequest } from '@/api/apiAdapter';
 

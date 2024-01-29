@@ -55,4 +55,3 @@
     font-weight: bold;
   }
 </style>
-@/types/personalInfoI

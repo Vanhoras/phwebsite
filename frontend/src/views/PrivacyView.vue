@@ -108,13 +108,13 @@
       <h4>Information about the Data Controller</h4>
       <p>The data controller for data processing on this website is:</p>
       <p>
-        {{ NAME }}<br />
-        {{ ADDRESS_LINE_1 }}<br />
-        {{ ADDRESS_LINE_2 }}<br />
-        {{ ADDRESS_LINE_3 }}<br />
-        {{ ADDRESS_LINE_4 }}<br />
+        {{ personalInfo.name }}<br />
+        {{ personalInfo.addressLine1 }}<br />
+        {{ personalInfo.addressLine2 }}<br />
+        {{ personalInfo.addressLine3 }}<br />
+        {{ personalInfo.addressLine4 }}<br />
       </p>
-      <p>Email: {{ EMAIL }}</p>
+      <p>Email: {{ personalInfo.email }}</p>
       <p>
         The data controller is the natural or legal person who, alone or jointly with others,
         decides on the purposes and means of processing personal data (e.g., names, email addresses,
@@ -279,14 +279,9 @@
 
 <script setup lang="ts">
   import { useHead } from '@vueuse/head';
-  import {
-    NAME,
-    ADDRESS_LINE_1,
-    ADDRESS_LINE_2,
-    ADDRESS_LINE_3,
-    ADDRESS_LINE_4,
-    EMAIL,
-  } from '@/assets/personalInfo';
+  import { useAppStore } from '@/stores/appStore';
+  import { computed } from 'vue';
+  import type { PersonalInfo } from '@/types/personalInfo';
 
   useHead({
     meta: [
@@ -296,6 +291,10 @@
       },
     ],
   });
+
+  const appStore = useAppStore();
+
+  const personalInfo = computed<PersonalInfo>(() => appStore.personalInfo);
 </script>
 
 <style scoped>

@@ -4,25 +4,21 @@
     <div id="legal_view">
       <h2>Legal Notice</h2>
       <h3>Paul Hielscher</h3>
-      <p>{{ ADDRESS_LINE_1 }}</p>
-      <p>{{ ADDRESS_LINE_2 }}</p>
-      <p>{{ ADDRESS_LINE_3 }}</p>
-      <p>{{ ADDRESS_LINE_4 }}</p>
+      <p>{{ personalInfo.addressLine1 }}</p>
+      <p>{{ personalInfo.addressLine2 }}</p>
+      <p>{{ personalInfo.addressLine3 }}</p>
+      <p>{{ personalInfo.addressLine4 }}</p>
       <h3>Contact</h3>
-      <p><span class="bold">E-Mail:</span> {{ EMAIL }}</p>
+      <p><span class="bold">E-Mail:</span> {{ personalInfo.email }}</p>
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
   import { useHead } from '@vueuse/head';
-  import {
-    ADDRESS_LINE_1,
-    ADDRESS_LINE_2,
-    ADDRESS_LINE_3,
-    ADDRESS_LINE_4,
-    EMAIL,
-  } from '@/assets/personalInfo';
+  import { useAppStore } from '@/stores/appStore';
+  import { computed } from 'vue';
+  import type { PersonalInfo } from '@/types/personalInfo';
 
   useHead({
     meta: [
@@ -32,6 +28,10 @@
       },
     ],
   });
+
+  const appStore = useAppStore();
+
+  const personalInfo = computed<PersonalInfo>(() => appStore.personalInfo);
 </script>
 
 <style scoped>

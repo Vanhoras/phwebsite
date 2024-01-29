@@ -1,6 +1,7 @@
 import { defineStore, type Store } from 'pinia'
 import type { PiniaStoreGetters } from '@/types/pinia';
 import type { SocialLinkI } from '@/types/socialLink';
+import type { PersonalInfo } from '@/types/personalInfo';
 
 import { sendEmailRequest } from '@/api/apiAdapter';
 
@@ -9,12 +10,12 @@ import xingIcon from "@/assets/icons/xing.svg";
 import itchIoIcon from "@/assets/icons/itch.io.svg";
 import githubIcon from "@/assets/icons/github2.svg";
 
-
 export interface AppState {
   mobileNavbarOpen: boolean,
   scrollDown: boolean,
   sectionReached: number,
-  socialLinks: SocialLinkI[]
+  socialLinks: SocialLinkI[],
+  personalInfo: PersonalInfo
 }
 
 interface AppStoreGetters extends PiniaStoreGetters<AppState>{
@@ -55,7 +56,15 @@ export const useAppStore = defineStore<'AppStore', AppState, AppStoreGetters, Ap
             link: "https://github.com/vanhoras",
             icon: githubIcon
           },
-        ]
+        ],
+        personalInfo: {
+          email: import.meta.env.EMAIL || "",
+          name: "Paul Hielscher",
+          addressLine1: import.meta.env.ADDRESS_LINE_1 || "",
+          addressLine2: import.meta.env.ADDRESS_LINE_2 || "",
+          addressLine3: import.meta.env.ADDRESS_LINE_3 || "",
+          addressLine4: import.meta.env.ADDRESS_LINE_4 || "",
+        }
     }),
 
   getters: {

@@ -28,7 +28,15 @@ jobs:
         working-directory: ./frontend
         run: npm install
 
-      - name: npm build 
+      - name: List Files in Directory
+        run: |
+          ls -R ./frontend/src/assets/
+
+      - name: Log Workspace Path
+        working-directory: ./frontend
+        run: echo ${{ github.workspace }}
+
+      - name: npm build
         working-directory: ./frontend
         run: npm run build
         env:

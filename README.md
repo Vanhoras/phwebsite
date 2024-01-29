@@ -6,7 +6,7 @@ Build using Vue in Frontend, NodeJs in Backend and AWS for Hosting
 
 ## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[VSCode](https://code.visualstudio.com/) + [TypeScript Vue Plugin](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
 
 ## Type Support for `.vue` Imports in TS
 

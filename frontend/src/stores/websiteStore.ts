@@ -83,7 +83,7 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
         id: "ideen_expo",
         title: "IdeenExpo",
         description: "The IdeenExpo is Europe's largest youth event for technology and natural sciences.",
-        points: ["Development of a web apps for schools to register themselves.","Development of a web app for exhibitors to register and configure their stands.", "Development of a web app for VIPs to register themselves."],
+        points: ["Development of a web app for schools to register themselves.","Development of a web app for exhibitors to register and configure their stands.", "Development of a web app for VIPs to register themselves."],
         role: "Fullstack Developer",
         time: "2019 - 2020",
         techStack: ["Java", "React", "JavaScript", "HTML", "CSS"],

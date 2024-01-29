@@ -2,9 +2,11 @@
 
 Website for Paul Hielscher
 
+Build using Vue in Frontend, NodeJs in Backend and AWS for Hosting
+
 ## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[VSCode](https://code.visualstudio.com/) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
 ## Type Support for `.vue` Imports in TS
 
@@ -17,11 +19,15 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
     2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
+## Formatting  
+
+use prettier.json
+
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+## Frontend Project Setup
 
 ```sh
 npm install
@@ -44,3 +50,7 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## Deployment  
+
+Deploys automatically via CI/CD when pushing to main

@@ -58,12 +58,12 @@ export const useAppStore = defineStore<'AppStore', AppState, AppStoreGetters, Ap
           },
         ],
         personalInfo: {
-          email: import.meta.env.EMAIL || "",
+          email: import.meta.env.EMAIL || process.env.EMAIL || "",
           name: "Paul Hielscher",
-          addressLine1: import.meta.env.ADDRESS_LINE_1 || "",
-          addressLine2: import.meta.env.ADDRESS_LINE_2 || "",
-          addressLine3: import.meta.env.ADDRESS_LINE_3 || "",
-          addressLine4: import.meta.env.ADDRESS_LINE_4 || "",
+          addressLine1: import.meta.env.ADDRESS_LINE_1 || process.env.ADDRESS_LINE_1 || "",
+          addressLine2: import.meta.env.ADDRESS_LINE_2 || process.env.ADDRESS_LINE_2 || "",
+          addressLine3: import.meta.env.ADDRESS_LINE_3 || process.env.ADDRESS_LINE_3 || "",
+          addressLine4: import.meta.env.ADDRESS_LINE_4 || process.env.ADDRESS_LINE_4 || "",
         }
     }),
 

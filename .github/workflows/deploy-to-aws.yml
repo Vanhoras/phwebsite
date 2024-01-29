@@ -23,18 +23,12 @@ jobs:
 
       - name: Setup node.js environment
         uses: actions/setup-node@v4.0.1
+        with:
+          node-version: 'latest'
 
       - name: npm install 
         working-directory: ./frontend
         run: npm install
-
-      - name: List Files in Directory
-        run: |
-          ls -R ./frontend/src/assets/
-
-      - name: Log Workspace Path
-        working-directory: ./frontend
-        run: echo ${{ github.workspace }}
 
       - name: npm build
         working-directory: ./frontend

@@ -32,6 +32,9 @@ jobs:
         run: |
           ls -R ./frontend/src/assets/
 
+      - name: Log Workspace Path
+        run: echo ${{ GITHUB_WORKSPACE }}
+
       - name: npm build 
         working-directory: ./frontend
         run: npm run build

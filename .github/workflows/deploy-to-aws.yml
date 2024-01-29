@@ -35,8 +35,7 @@ jobs:
       - name: Log Workspace Path
         run: echo ${{ github.workspace }}
 
-      - name: npm build 
-        working-directory: ./frontend
+      - name: npm build
         run: npm run build
         env:
           EMAIL: ${{ secrets.EMAIL }}

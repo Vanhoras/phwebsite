@@ -1,0 +1,60 @@
+name: Deploy GitHub repository to AWS S3
+
+# Controls when the action will run. Invokes the workflow on push events but only for the main branch
+on:
+  push:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+env:
+  AWS_REGION : "eu-central-1"
+      
+jobs:
+  # deploy Frontend to AWS S3
+  deploy:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      #Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Setup node.js environment
+        uses: actions/setup-node@v4.0.1
+
+      - name: npm install 
+        working-directory: ./frontend
+        run: npm install
+
+      - name: npm build 
+        working-directory: ./frontend
+        run: npm run build
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
+          ADDRESS_LINE_1: ${{ secrets.ADDRESS_LINE_1 }}
+          ADDRESS_LINE_2: ${{ secrets.ADDRESS_LINE_2 }}
+          ADDRESS_LINE_3: ${{ secrets.ADDRESS_LINE_3 }}
+          ADDRESS_LINE_4: ${{ secrets.ADDRESS_LINE_4 }}
+
+      - name: S3 sync
+        uses: jakejarvis/s3-sync-action@v0.5.1
+        with: 
+          args: --acl public-read --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKETS }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ env.AWS_REGION }}
+          SOURCE_DIR: 'frontend/dist
+
+      - name: Invalidate CloudFront
+        uses: chetan/invalidate-cloudfront-action@v.2.4
+        env:
+          DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
+          PATHS: '/*'
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ env.AWS_REGION }}
+  

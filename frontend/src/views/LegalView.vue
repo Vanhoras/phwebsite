@@ -18,7 +18,7 @@
   import { useHead } from '@vueuse/head';
   import { useAppStore } from '@/stores/appStore';
   import { computed } from 'vue';
-  import type { PersonalInfo } from '@/types/personalInfo';
+  import type { PersonalInfo } from '@/types/personalInfoI';
 
   useHead({
     meta: [

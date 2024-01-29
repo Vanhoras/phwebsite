@@ -24,7 +24,7 @@ jobs:
       - name: Setup node.js environment
         uses: actions/setup-node@v4.0.1
         with:
-          node-version: 20
+          node-version: 'latest'
 
       - name: npm install 
         working-directory: ./frontend

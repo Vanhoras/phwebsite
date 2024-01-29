@@ -50,7 +50,7 @@ jobs:
           SOURCE_DIR: 'frontend/dist'
 
       - name: Invalidate CloudFront
-        uses: chetan/invalidate-cloudfront-action@v.2.4
+        uses: chetan/invalidate-cloudfront-action@v2.4
         env:
           DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
           PATHS: '/*'

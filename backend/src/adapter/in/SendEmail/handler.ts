@@ -2,13 +2,12 @@ import type { ValidatedEventAPIGatewayProxyEvent } from '@libs/api-gateway';
 import { middyfy } from '@libs/lambda';
 
 import schema from './schema';
-import { log } from 'console';
 
 const sendEmail: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
 
   try {
 
-    log(`sendEmail ${event.body.email}, ${event.body.name}, ${event.body.message}`);
+    console.log(`sendEmail ${event.body.email}, ${event.body.name}, ${event.body.message}`);
 
     return {
       statusCode: 200,

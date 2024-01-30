@@ -8,6 +8,7 @@ export default {
       http: {
         method: 'post',
         path: 'send_email',
+        memorySize: 128,
         request: {
           schemas: {
             'application/json': schema,

@@ -5,6 +5,5 @@ export default {
     email: { type: 'string' },
     message: { type: 'string' },
   },
-  required: ['name', 'email', 'message'],
-  memorySize: 128
+  required: ['name', 'email', 'message']
 } as const;

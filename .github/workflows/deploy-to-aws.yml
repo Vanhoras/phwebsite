@@ -3,14 +3,14 @@ name: Deploy GitHub repository to AWS S3
 # Controls when the action will run. Invokes the workflow on push events but only for the main branch
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 env:
-  AWS_REGION : 'eu-central-1'
-      
+  AWS_REGION: "eu-central-1"
+
 jobs:
   # deploy Frontend to AWS S3
   deploy:
@@ -19,18 +19,19 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       #Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4.1.1
 
       - name: Setup node.js environment
         uses: actions/setup-node@v4.0.1
         with:
-          node-version: 'latest'
+          node-version: "latest"
 
-      - name: npm install 
+      # Deploy Frontend
+      - name: Frontend npm install
         working-directory: ./frontend
         run: npm install
 
-      - name: npm build
+      - name: Frontend npm build
         working-directory: ./frontend
         run: npm run build
         env:
@@ -42,21 +43,35 @@ jobs:
 
       - name: S3 sync
         uses: jakejarvis/s3-sync-action@v0.5.1
-        with: 
+        with:
           args: --acl public-read --delete
         env:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKETS }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ env.AWS_REGION }}
-          SOURCE_DIR: 'frontend/dist'
+          SOURCE_DIR: "frontend/dist"
 
       - name: Invalidate CloudFront
         uses: chetan/invalidate-cloudfront-action@v2.4
         env:
           DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
-          PATHS: '/*'
+          PATHS: "/*"
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ env.AWS_REGION }}
-  
+
+      # Deploy Backend
+      - name: Backend npm install
+        working-directory: ./backend
+        run: npm install
+
+      - name: Deploy Lambda
+        uses: serverless/github-action@v3.2
+        with:
+          args: deploy
+          entrypoint: ./backend
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ env.AWS_REGION }}

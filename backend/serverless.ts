@@ -3,7 +3,7 @@ import type { AWS } from '@serverless/typescript';
 import sendEmail from '@adapter/in/SendEmail';
 
 const serverlessConfiguration: AWS = {
-  service: 'backend',
+  service: 'phwebsite-backend',
   frameworkVersion: '3',
   plugins: ['serverless-esbuild', 'serverless-offline'],
   provider: {
@@ -27,7 +27,7 @@ const serverlessConfiguration: AWS = {
       minify: false,
       sourcemap: true,
       exclude: ['aws-sdk'],
-      target: 'node14',
+      target: 'node20',
       define: { 'require.resolve': undefined },
       platform: 'node',
       concurrency: 10,

@@ -10,6 +10,7 @@ const serverlessConfiguration: AWS = {
     name: 'aws',
     runtime: 'nodejs14.x',
     stage: 'production',
+    memorySize: 128,
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,

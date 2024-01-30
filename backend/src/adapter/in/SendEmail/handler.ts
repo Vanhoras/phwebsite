@@ -7,7 +7,7 @@ const sendEmail: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (even
 
   try {
 
-    console.log(`sendEmail ${event.body.email}, ${event.body.name}, ${event.body.message}`);
+    console.log(`sendEmail email: ${event.body.email}, name: ${event.body.name}, message: ${event.body.message}`);
 
     return {
       statusCode: 200,

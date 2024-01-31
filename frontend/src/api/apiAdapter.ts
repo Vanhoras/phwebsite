@@ -1,4 +1,4 @@
-const backendURL = 'localhost:5173';
+const backendURL = 'https://hug5q32o3h.execute-api.eu-central-1.amazonaws.com/production';
 
 const sendEmailRoute = '/send_email'
 

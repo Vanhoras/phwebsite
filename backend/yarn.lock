@@ -798,6 +798,13 @@
   resolved "https://registry.npmjs.org/@middy/core/-/core-3.6.2.tgz"
   integrity sha512-/vyvG34RIt7CTmuB/jksGkk9vs6RCoOlRFPfdQq11dHkiKlT2mm8j/jZx7gSpEhXXh9LeaEMuKPnsgWBIlGS1g==
 
+"@middy/http-cors@^5.2.3":
+  version "5.2.3"
+  resolved "https://registry.npmjs.org/@middy/http-cors/-/http-cors-5.2.3.tgz"
+  integrity sha512-6XspkyqusnBljFoNrYMpX/SfC+QsQsVqHfX8THnErExdKM4Omi+75Wfp9yyDrnZ+XVNBLJQh2Yz13IvGwZdmXA==
+  dependencies:
+    "@middy/util" "5.2.3"
+
 "@middy/http-json-body-parser@^3.4.0":
   version "3.6.2"
   resolved "https://registry.npmjs.org/@middy/http-json-body-parser/-/http-json-body-parser-3.6.2.tgz"
@@ -809,6 +816,11 @@
   version "3.6.2"
   resolved "https://registry.npmjs.org/@middy/util/-/util-3.6.2.tgz"
   integrity sha512-zjyjF5BdSNnDlZbTvfQwwuUIs3H5PpN/R3wOAipXhaGD/SjpIUBcJJPLUQHySeHoZym1FC3MJYczJDbYQWKWdg==
+
+"@middy/util@5.2.3":
+  version "5.2.3"
+  resolved "https://registry.npmjs.org/@middy/util/-/util-5.2.3.tgz"
+  integrity sha512-n00fLtK8rd2IM1ET8vhIwxrmaBHFGN0CERtnGLu8NTeCHCUTi5Z/7acuTw+i5xQZM8p4mEAKUu/M8SAUOp/Azw==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"

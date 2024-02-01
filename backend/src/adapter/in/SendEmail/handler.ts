@@ -11,6 +11,10 @@ const sendEmail: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (even
 
     return {
       statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
       body: JSON.stringify({
         message: 'Email was sent successfully.',
         event,

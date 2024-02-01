@@ -9,6 +9,7 @@ export default {
         method: 'post',
         path: 'send_email',
         memorySize: 128,
+        cors: true,
         request: {
           schemas: {
             'application/json': schema,

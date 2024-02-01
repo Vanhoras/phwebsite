@@ -101,15 +101,15 @@
     submitButton.value?.setAttribute('value', 'SUBMIT');
 
     if (success) {
+      notificationFailure.value?.classList.add('display--none');
       notificationSuccess.value?.classList.remove('display--none');
-      setTimeout(() => {
-        notificationSuccess?.value?.classList.add('display--none');
-      }, 4000);
+
+      formData.value.name = '';
+      formData.value.email = '';
+      formData.value.message = '';
     } else {
       notificationFailure.value?.classList.remove('display--none');
-      setTimeout(() => {
-        notificationFailure?.value?.classList.add('display--none');
-      }, 4000);
+      notificationSuccess.value?.classList.add('display--none');
     }
 
     console.log('form result', success);
@@ -327,7 +327,7 @@
     animation: rotate 1.5s linear infinite;
   }
 
-  @keyframes float_up_and_disappear {
+  @keyframes float_up {
     0% {
       transform: translate(0, 3rem);
       opacity: 0.1;
@@ -336,19 +336,15 @@
       transform: translate(0, 0);
       opacity: 1;
     }
-    80% {
-      transform: translate(0, 0);
-      opacity: 1;
-    }
     100% {
       transform: translate(0, 0);
-      opacity: 0;
+      opacity: 1;
     }
   }
 
   .notification {
     position: absolute;
-    animation-name: float_up_and_disappear;
+    animation-name: float_up;
     animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
@@ -361,6 +357,6 @@
 
   .notification--failure {
     color: var(--failure);
-    bottom: -3.2rem;
+    bottom: -3.7rem;
   }
 </style>

@@ -37,4 +37,4 @@ const sendEmail: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (even
   
 };
 
-export const main = middyfy(sendEmail);
+export const main = sendEmail;

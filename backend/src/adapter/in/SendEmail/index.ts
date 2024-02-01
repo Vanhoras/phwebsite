@@ -7,7 +7,7 @@ export default {
     {
       http: {
         method: 'post',
-        path: 'send_email',
+        path: 'api/send_email',
         memorySize: 128,
         cors: true,
         request: {

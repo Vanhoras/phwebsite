@@ -1,9 +1,10 @@
 import type { ValidatedEventAPIGatewayProxyEvent } from '@libs/api-gateway';
-import { middyfy } from '@libs/lambda';
 
 import schema from './schema';
 
 const sendEmail: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
+
+  console.log(`event: ${event}`);
 
   if (!event.body.email || !event.body.name || !event.body.message) {
     return {
@@ -51,4 +52,4 @@ const sendEmail: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (even
   
 };
 
-export const main = middyfy(sendEmail);
+export const main = sendEmail;

@@ -4,7 +4,7 @@ import schema from './schema';
 
 const sendEmail: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
 
-  console.log(`event: ${event}`);
+  console.log("event", event);
 
   if (!event.body.email || !event.body.name || !event.body.message) {
     return {

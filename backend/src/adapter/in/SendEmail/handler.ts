@@ -4,9 +4,12 @@ import schema from './schema';
 
 const sendEmail: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
 
-  console.log("event", event);
+  // @ts-ignore
+  const body = JSON.parse(event.body);
 
-  if (!event.body.email || !event.body.name || !event.body.message) {
+  console.log("body", body);
+
+  if (!body.email || !body.name || !body.message) {
     return {
       statusCode: 400,
       headers: {
@@ -22,7 +25,7 @@ const sendEmail: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (even
 
   try {
 
-    console.log(`sendEmail email: ${event.body.email}, name: ${event.body.name}, message: ${event.body.message}`);
+    console.log(`sendEmail email: ${body.email}, name: ${body.name}, message: ${body.message}`);
 
     return {
       statusCode: 200,

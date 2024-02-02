@@ -5,6 +5,20 @@ import schema from './schema';
 
 const sendEmail: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
 
+  if (!event.body.email || !event.body.name || !event.body.message) {
+    return {
+      statusCode: 400,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+      },
+      body: JSON.stringify({
+        message: 'Parameters are undefined.',
+        event,
+      })
+    }
+  }
+
   try {
 
     console.log(`sendEmail email: ${event.body.email}, name: ${event.body.name}, message: ${event.body.message}`);
@@ -37,4 +51,4 @@ const sendEmail: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (even
   
 };
 
-export const main = sendEmail;
+export const main = middyfy(sendEmail);

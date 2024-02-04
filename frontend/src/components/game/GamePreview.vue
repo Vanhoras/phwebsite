@@ -11,7 +11,7 @@
     <a :href="props.game.itch_io_link">
       <h3 class="game__preview__title">{{ props.game.title }}</h3>
     </a>
-    <h4 class="game__preview__description">{{ props.game.genre }}</h4>
+    <h4>{{ props.game.genre }}</h4>
     <p class="game__preview__description">{{ props.game.short_description }}</p>
   </div>
 </template>
@@ -69,7 +69,6 @@
   .game__preview__title {
     color: var(--accent-1);
     font-size: 2.2rem;
-    text-align: center;
     margin-top: 0.5rem;
   }
 
@@ -78,11 +77,25 @@
   }
 
   .game__preview__description {
-    text-align: center;
     white-space: pre-line;
   }
 
   h4 {
     display: block;
+    white-space: pre-line;
+  }
+
+  @media (min-width: 650px) {
+    .game__preview__title {
+      text-align: center;
+    }
+
+    .game__preview__description {
+      text-align: center;
+    }
+
+    h4 {
+      text-align: center;
+    }
   }
 </style>

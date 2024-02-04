@@ -120,7 +120,7 @@
     right: -5.1rem;
     background-color: var(--black);
     min-width: 100vw;
-    min-height: 25rem;
+    min-height: 20rem;
     z-index: 1000;
     border-bottom: 1px solid var(--divider);
     border-left: 1px solid var(--divider);

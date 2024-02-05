@@ -39,7 +39,7 @@
     });
   };
 
-  const observer = new IntersectionObserver(handleInView, { threshold: 0.5 });
+  const observer = new IntersectionObserver(handleInView, { threshold: 0.3 });
 
   onMounted(() => {
     if (!gamesPreview.value) return;

@@ -32,8 +32,7 @@
 
   const gamesView = ref<HTMLElement | null>(null);
 
-  // currently hardcoded. If the number of games per row changes due to design calculate it instead.
-  const gamesPerRow = window.innerWidth > 945 ? 3 : window.innerWidth > 629 ? 2 : 1;
+  const gamesPerRow = window.innerWidth > 945 ? 3 : window.innerWidth > 649 ? 2 : 1;
 </script>
 
 <style scoped>

@@ -62,7 +62,7 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, onMounted, onBeforeUnmount } from 'vue';
+  import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
   import { useAppStore } from '@/stores/appStore';
 
   const appStore = useAppStore();
@@ -85,9 +85,11 @@
     privacy: false,
   });
 
-  const submit = async () => {
-    console.log('resolving form action', formData.value);
+  const isMobileView = computed(() => {
+    return window.innerWidth < 1024;
+  });
 
+  const submit = async () => {
     submitButton.value?.setAttribute('value', '');
     loadingSpinner.value?.classList.remove('display--none');
 
@@ -111,38 +113,51 @@
       notificationFailure.value?.classList.remove('display--none');
       notificationSuccess.value?.classList.add('display--none');
     }
-
-    console.log('form result', success);
   };
 
   const handleInView = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting && appStore.scrollDown) {
         if (entry.target.isEqualNode(nameInput.value)) {
-          setTimeout(() => {
-            entry.target.classList.remove('opacity--zero');
-            entry.target.classList.add('fade-in--right');
-          }, 250);
+          setTimeout(
+            () => {
+              entry.target.classList.remove('opacity--zero');
+              entry.target.classList.add('fade-in--right');
+            },
+            isMobileView.value ? 100 : 250,
+          );
         } else if (entry.target.isEqualNode(emailInput.value)) {
-          setTimeout(() => {
-            entry.target.classList.remove('opacity--zero');
-            entry.target.classList.add('fade-in--right');
-          }, 300);
+          setTimeout(
+            () => {
+              entry.target.classList.remove('opacity--zero');
+              entry.target.classList.add('fade-in--right');
+            },
+            isMobileView.value ? 150 : 300,
+          );
         } else if (entry.target.isEqualNode(textInput.value)) {
-          setTimeout(() => {
-            entry.target.classList.remove('opacity--zero');
-            entry.target.classList.add('fade-in--left');
-          }, 400);
+          setTimeout(
+            () => {
+              entry.target.classList.remove('opacity--zero');
+              entry.target.classList.add('fade-in--left');
+            },
+            isMobileView.value ? 250 : 400,
+          );
         } else if (entry.target.isEqualNode(privacyCheckbox.value)) {
-          setTimeout(() => {
-            entry.target.classList.remove('opacity--zero');
-            entry.target.classList.add('fade-in--left');
-          }, 500);
+          setTimeout(
+            () => {
+              entry.target.classList.remove('opacity--zero');
+              entry.target.classList.add('fade-in--left');
+            },
+            isMobileView.value ? 350 : 500,
+          );
         } else if (entry.target.isEqualNode(submitButton.value)) {
-          setTimeout(() => {
-            entry.target.classList.remove('opacity--zero');
-            entry.target.classList.add('fade-in--right');
-          }, 500);
+          setTimeout(
+            () => {
+              entry.target.classList.remove('opacity--zero');
+              entry.target.classList.add('fade-in--right');
+            },
+            isMobileView.value ? 350 : 500,
+          );
         }
       }
     });

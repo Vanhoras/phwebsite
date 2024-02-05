@@ -23,8 +23,12 @@
   const websites = computed<Website[]>(() => websiteStore.websites);
 
   const getLagBeforeShow = (index: number) => {
-    if (index === 0) return 200;
-    if (index === 1) return 300;
+    if (window.innerWidth < 1024) {
+      return 0;
+    }
+
+    if (index === 0) return 150;
+    if (index === 1) return 250;
     return 0;
   };
 </script>

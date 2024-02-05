@@ -69,7 +69,7 @@
               techStack?.item(i)?.classList.remove('opacity--zero');
               techStack?.item(i)?.classList.add('fade-in--none');
             },
-            props.lagBeforeShow + i * 75 + 150,
+            props.lagBeforeShow + i * 75 + 100,
           );
         }
       }

@@ -105,15 +105,25 @@
 
   .slide--up {
     animation-name: keyframes_slide--up;
-    animation-duration: 0.75s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.35, 0.04, 0.25, 1.09);
   }
 
   .slide--down {
     animation-name: keyframes_slide--down;
-    animation-duration: 0.75s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.35, 0.04, 0.25, 1.09);
+  }
+
+  @media (min-width: 1024px) {
+    .slide--up {
+      animation-duration: 0.75s;
+    }
+
+    .slide--down {
+      animation-duration: 0.75s;
+    }
   }
 </style>

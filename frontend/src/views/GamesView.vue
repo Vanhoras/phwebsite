@@ -2,7 +2,7 @@
   <div id="games_view" ref="gamesView">
     <div class="lg-crop">
       <img
-        src="@/assets/images/games/header.png"
+        :src="gamesHeaderImage"
         alt="Games Overview Header"
         class="games__overview__image"
         rel="preload"
@@ -26,13 +26,22 @@
   import type { Game } from '@/types/game';
   import { computed } from 'vue';
   import GamePreview from '@/components/game/GamePreview.vue';
+  import GamesHeaderDesktop from '@/assets/images/games/GamesHeaderDesktop.png';
+  import GamesHeaderMobile from '@/assets/images/games/GamesHeaderMobile.png';
 
   const gamesStore = useGameStore();
   const games = computed<Game[]>(() => gamesStore.games);
 
   const gamesView = ref<HTMLElement | null>(null);
 
-  const gamesPerRow = window.innerWidth > 945 ? 3 : window.innerWidth > 649 ? 2 : 1;
+  const gamesPerRow = window.innerWidth >= 985 ? 3 : window.innerWidth >= 650 ? 2 : 1;
+
+  const gamesHeaderImage = computed<string>(() => {
+    if (window.innerWidth < 1024) {
+      return GamesHeaderMobile;
+    }
+    return GamesHeaderDesktop;
+  });
 </script>
 
 <style scoped>

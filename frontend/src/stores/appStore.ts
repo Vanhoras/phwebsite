@@ -43,7 +43,7 @@ export const useAppStore = defineStore<'AppStore', AppState, AppStoreGetters, Ap
           },
           {
             name: "xing",
-            link: "https://www.xing.com/profile/Paul_Hielscher2",
+            link: "https://www.xing.com/profile/PaulJoel_Hielscher",
             icon: xingIcon
           },
           {

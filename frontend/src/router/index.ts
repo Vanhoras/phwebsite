@@ -68,14 +68,13 @@ const router = createRouter({
     }
     if (to.name === 'websites') {
       return {
-        el: '#referencesLocation',
+        el: '#websitesLocation',
         behavior: 'smooth',
       };
     }
     if (to.name === 'software') {
       return {
-        el: '#el_leasing',
-        top: 120,
+        el: '#softwareLocation',
         behavior: 'smooth',
       };
     }

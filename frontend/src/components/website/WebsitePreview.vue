@@ -38,7 +38,7 @@
 <script setup lang="ts">
   import { ref, onMounted, onBeforeUnmount } from 'vue';
   import type { Website } from '@/types/website';
-  import TechDiv from '@/components/website/TechDiv.vue';
+  import TechDiv from '@/components/common/TechDiv.vue';
 
   const props = defineProps<{
     website: Website;

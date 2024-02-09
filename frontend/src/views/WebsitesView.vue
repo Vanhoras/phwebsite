@@ -1,15 +1,16 @@
 <template>
-  <div id="websites_view" ref="websiteView">
-    <div class="lg-crop websites__title">
+  <div id="websites-view" ref="websiteView">
+    <div class="lg-crop websites-view__title">
       <img
         :src="referencesHeaderImage"
         alt="References Overview Header"
-        class="websites__overview__image"
+        class="websites-view__image"
         rel="preload"
       />
     </div>
 
-    <div class="website_view__content">
+    <div class="website-view__content">
+      <h2 class="websites-view__title display--none">Websites</h2>
       <WebsitePreview
         v-for="(website, index) in websites"
         :key="website.id"
@@ -52,16 +53,16 @@
 </script>
 
 <style scoped>
-  #websites_view {
+  #websites-view {
     padding-top: 7.5rem;
   }
 
-  .website_view__content {
+  .website-view__content {
     margin: auto;
     max-width: 110rem;
   }
 
-  .websites__title {
+  .websites-view__title {
     margin-bottom: 5rem;
   }
 
@@ -79,14 +80,14 @@
     height: 16rem;
   }
 
-  .websites__overview__image {
+  .websites-view__image {
     width: 1024px;
     position: absolute;
     right: calc((100% - 1024px) / 2);
   }
 
   @media (min-width: 1024px) {
-    .websites__overview__image {
+    .websites-view__image {
       width: 100%;
       position: relative;
       right: 0;

@@ -4,9 +4,14 @@
     <div id="topLocation" ref="topLocation"></div>
     <HomeView />
 
-    <div id="referencesLocation"></div>
+    <div id="websitesLocation"></div>
     <SectionContainer>
       <WebsitesView />
+    </SectionContainer>
+
+    <div id="softwareLocation"></div>
+    <SectionContainer>
+      <SoftwareView />
     </SectionContainer>
 
     <div id="gamesLocation"></div>
@@ -28,6 +33,7 @@
   import HomeView from '@/views/HomeView.vue';
   import GamesView from '@/views/GamesView.vue';
   import WebsitesView from '@/views/WebsitesView.vue';
+  import SoftwareView from '@/views/SoftwareView.vue';
   import ContactView from '@/views/ContactView.vue';
   import SectionContainer from '@/components/SectionContainer.vue';
   import { useAppStore } from '@/stores/appStore';

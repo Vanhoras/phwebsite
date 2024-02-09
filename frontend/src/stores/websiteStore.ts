@@ -1,10 +1,8 @@
-import { defineStore, type Store } from 'pinia'
-import type { Website } from '@/types/website'
+import { defineStore, type Store } from 'pinia';
+import type { Website } from '@/types/website';
 import type { PiniaStoreGetters } from '@/types/pinia';
 
 import obiImage from "@/assets/images/websites/OBI/obi_cart1_small.png";
-import elLeasingImage from "@/assets/images/websites/El_leasing/eleasa_small.png";
-import postbankImage from "@/assets/images/websites/Postbank/postbank_small.jpg";
 import dwsSteuerberaterImage from "@/assets/images/websites/DWS_Steuerberater/azubi-portal-5_small.png";
 import ideenExpoImage from "@/assets/images/websites/IdeenExpo/Ideenexpo.jpg";
 import hsbcImage from "@/assets/images/websites/HSBC/transactionservices_small.png";
@@ -42,29 +40,6 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
                 {displayName: "OBI Czechia", link: "https://www.obi.cz/"}],
         image: obiImage,
         color: "#ff7e21",
-      },
-      {
-        id: "el_leasing",
-        title: "el-Leasing",
-        description: "el-Leasing leases work bikes for companies and employees.",
-        points: ["Leading a team to create an automated contract conclusion process, in order to simplify the customer acquisition process."],
-        role: "Lead Developer",
-        time: "2021",
-        techStack: ["Java", "Spring", "FreeMarker", "JavaScript", "CSS", "SQL"],
-        image: elLeasingImage,
-        color: "#ffd300",
-      },
-      {
-        id: "postbank",
-        title: "Postbank",
-        description: "The Postbank is a branch of Deutsche Bank, Germany's largest bank.",
-        points: ["Maintenance of their leasing document management system.", 
-                "Consulting on the migration to a new document management system."],
-        role: "Software Developer, Consultant",
-        time: "2020 - 2021",
-        techStack: ["Java", "Gupta", "SQL", "Oracle DB", "Varial"],
-        image: postbankImage,
-        color: "#ffcd00",
       },
       {
         id: "dws_steuerberater",

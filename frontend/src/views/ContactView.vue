@@ -2,16 +2,18 @@
   <div id="contact_view" ref="contactView">
     <h2 class="contact__title" ref="contactTitle">CONTACT</h2>
     <ContactForm />
+    <KoFi class="ko-fi" />
   </div>
 </template>
 
 <script setup lang="ts">
   import ContactForm from '@/components/contact/ContactForm.vue';
+  import KoFi from '@/components/contact/KoFi.vue';
 </script>
 
 <style scoped>
   #contact_view {
-    padding-bottom: 15rem;
+    padding-bottom: 2.6rem;
     padding-top: 15rem;
     min-height: calc(100vh - 15.5rem);
   }
@@ -23,5 +25,9 @@
     font-weight: bold;
     color: var(--text-dark);
     margin-bottom: 8rem;
+  }
+
+  .ko-fi {
+    margin-top: 9rem;
   }
 </style>

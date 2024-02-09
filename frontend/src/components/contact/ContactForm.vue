@@ -237,8 +237,7 @@
   }
 
   .submit-button:hover {
-    background-color: var(--accent-1);
-    color: var(--black);
+    color: var(--accent-1);
     border-color: var(--accent-1);
   }
 

@@ -1,6 +1,6 @@
 <template>
   <div id="websites_view" ref="websiteView">
-    <div class="lg-crop websites__title">
+    <div class="lg-crop">
       <img
         :src="referencesHeaderImage"
         alt="References Overview Header"
@@ -10,6 +10,7 @@
     </div>
 
     <div class="website_view__content">
+      <h2 class="websites__title">REFERENCES</h2>
       <WebsitePreview
         v-for="(website, index) in websites"
         :key="website.id"
@@ -27,8 +28,8 @@
   import type { Website } from '@/types/website';
   import { computed } from 'vue';
   import WebsitePreview from '@/components/website/WebsitePreview.vue';
-  import ReferencesHeaderDesktop from '@/assets/images/websites/ReferencesHeaderDesktop.png';
-  import ReferencesHeaderMobile from '@/assets/images/websites/ReferencesHeaderMobile.png';
+  import ReferencesHeaderDesktop from '@/assets/images/websites/technologie_banner.png';
+  import ReferencesHeaderMobile from '@/assets/images/websites/technologie_banner_large.png';
 
   const websiteStore = useWebsiteStore();
   const websites = computed<Website[]>(() => websiteStore.websites);
@@ -62,7 +63,14 @@
   }
 
   .websites__title {
-    margin-bottom: 5rem;
+    text-align: center;
+    font-size: 6rem;
+    font-weight: bold;
+    color: var(--accent-3);
+    margin-bottom: 2rem;
+    margin-top: 0rem;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000000;
   }
 
   .border {

@@ -25,6 +25,9 @@
     font-weight: bold;
     color: var(--text-dark);
     margin-bottom: 8rem;
+    z-index: 2;
+    position: relative;
+    pointer-events: none;
   }
 
   .ko-fi {

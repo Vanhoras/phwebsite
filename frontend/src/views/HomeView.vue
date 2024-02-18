@@ -14,15 +14,15 @@
       <h2 class="introduction__job">Developer</h2>
       <p class="introduction__text">
         skilled in everything from
-        <RouterLink class="link--blue" :to="{ name: 'websites' }" @click="closeMobileMenu()"
+        <RouterLink class="link link--blue" :to="{ name: 'websites' }" @click="closeMobileMenu()"
           >Websites</RouterLink
         >,<br />
         over
-        <RouterLink class="link--yellow" :to="{ name: 'software' }" @click="closeMobileMenu()"
+        <RouterLink class="link link--yellow" :to="{ name: 'software' }" @click="closeMobileMenu()"
           >Financing Software</RouterLink
         >
         to
-        <RouterLink :to="{ name: 'games' }" class="link--magenta" @click="closeMobileMenu()"
+        <RouterLink :to="{ name: 'games' }" class="link link--magenta" @click="closeMobileMenu()"
           >Game Development</RouterLink
         >
       </p>
@@ -52,12 +52,13 @@
   .home {
     position: relative;
     min-height: calc(100vh - 7.5rem);
+    pointer-events: none;
   }
 
   .self-image {
     position: absolute;
-    top: 15.9rem;
-    left: calc(50vw - 16.4rem);
+    top: 15.7rem;
+    left: calc(50vw - 16.8rem);
   }
 
   .introduction__container {
@@ -95,6 +96,10 @@
     display: none;
   }
 
+  .link {
+    pointer-events: auto;
+  }
+
   @media (min-width: 500px) {
     .introduction__container {
       margin-left: calc(50vw - 26rem);
@@ -103,19 +108,23 @@
     }
 
     .introduction__greeting {
+      pointer-events: auto;
       font-size: 5.5rem;
     }
 
     .introduction__self {
+      pointer-events: auto;
       font-size: 5.5rem;
     }
 
     .introduction__job {
+      pointer-events: auto;
       font-size: 8.5rem;
       margin-top: -1rem;
     }
 
     .introduction__text {
+      pointer-events: auto;
       font-size: 2.5rem;
       margin-top: 2.5rem;
     }
@@ -123,7 +132,7 @@
 
   @media (min-width: 1024px) {
     .self-image {
-      top: 18.9rem;
+      top: 18.8rem;
       left: calc(50vw - 41.1rem);
     }
 
@@ -138,6 +147,7 @@
 
     .scroll-down-arrow {
       display: block;
+      pointer-events: auto;
       fill: var(--text-dark);
       width: 10rem;
       transform: scale(100%, 50%);

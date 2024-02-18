@@ -194,6 +194,7 @@
 
 <style scoped>
   .contact-form {
+    pointer-events: auto;
     max-width: 57rem;
     margin: auto;
     padding: 0rem 1rem 5rem 1rem;
@@ -207,6 +208,7 @@
 
   .text-input,
   textarea {
+    pointer-events: auto;
     display: block;
     width: 100%;
     background-color: var(--grey-1);
@@ -223,6 +225,7 @@
   }
 
   .submit-button {
+    pointer-events: auto;
     display: block;
     padding: 1rem 3rem;
     min-width: 14.2rem;
@@ -242,11 +245,13 @@
   }
 
   .privacy-agreement {
+    pointer-events: auto;
     position: absolute;
     bottom: 2.3rem;
   }
 
   .privacy-link {
+    pointer-events: auto;
     position: absolute;
     top: 2rem;
     right: 0rem;

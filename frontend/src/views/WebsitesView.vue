@@ -1,5 +1,5 @@
 <template>
-  <div id="websites_view" ref="websiteView">
+  <div id="websites_view">
     <div class="lg-crop">
       <img
         :src="referencesHeaderImage"

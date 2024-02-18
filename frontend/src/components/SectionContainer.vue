@@ -1,5 +1,5 @@
 <template>
-  <div ref="sectionContainer">
+  <div class="section" ref="sectionContainer">
     <slot></slot>
   </div>
 </template>
@@ -93,6 +93,10 @@
     100% {
       transform: translate(0, 0);
     }
+  }
+
+  .section {
+    pointer-events: none;
   }
 
   .translate--down {

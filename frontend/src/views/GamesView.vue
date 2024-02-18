@@ -1,5 +1,5 @@
 <template>
-  <div id="games_view" ref="gamesView">
+  <div id="games_view">
     <div class="lg-crop">
       <img
         :src="gamesHeaderImage"
@@ -21,7 +21,6 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
   import { useGameStore } from '@/stores/gameStore';
   import type { Game } from '@/types/game';
   import { computed } from 'vue';
@@ -31,8 +30,6 @@
 
   const gamesStore = useGameStore();
   const games = computed<Game[]>(() => gamesStore.games);
-
-  const gamesView = ref<HTMLElement | null>(null);
 
   const gamesPerRow = window.innerWidth >= 985 ? 3 : window.innerWidth >= 650 ? 2 : 1;
 

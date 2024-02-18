@@ -58,6 +58,7 @@
   }
 
   .game__preview__image {
+    pointer-events: auto;
     height: 25rem;
     width: 31.5rem;
     margin-right: auto;
@@ -67,6 +68,7 @@
   }
 
   .game__preview__title {
+    pointer-events: auto;
     color: var(--accent-1);
     font-size: 2.2rem;
     margin-top: 0.5rem;
@@ -78,11 +80,13 @@
 
   .game__preview__description {
     white-space: pre-line;
+    pointer-events: auto;
   }
 
   h4 {
     display: block;
     white-space: pre-line;
+    pointer-events: auto;
   }
 
   @media (min-width: 650px) {

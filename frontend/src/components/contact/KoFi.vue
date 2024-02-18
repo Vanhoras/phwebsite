@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- KoFi button element taken from KoFi -->
     <span id="spanPreview" alt="HTML Button preview" class="imgPreview">
       <link
         href="https://fonts.googleapis.com/css?family=Quicksand:400,700"
@@ -32,9 +31,14 @@
 <style scoped>
   .btn-container {
     text-align: center;
+    pointer-events: auto;
   }
 
   .kofi-button {
+    z-index: 2;
+    position: relative;
+
+    pointer-events: auto;
     line-height: 3.6rem;
     display: inline-block;
     padding: 0.2rem 1.2rem;

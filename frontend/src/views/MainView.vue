@@ -1,6 +1,8 @@
 <template>
   <div class="background" />
-  <main class="hexagon">
+  <main>
+    <HexagonFiller />
+
     <div id="topLocation" ref="topLocation"></div>
     <HomeView />
 
@@ -15,9 +17,7 @@
     </SectionContainer>
 
     <div id="contactLocation"></div>
-    <SectionContainer>
-      <ContactView />
-    </SectionContainer>
+    <ContactView />
 
     <div id="bottomLocation" ref="bottomLocation"></div>
   </main>
@@ -31,6 +31,7 @@
   import ContactView from '@/views/ContactView.vue';
   import SectionContainer from '@/components/SectionContainer.vue';
   import { useAppStore } from '@/stores/appStore';
+  import HexagonFiller from '@/components/hexagon/HexagonFiller.vue';
 
   const appStore = useAppStore();
 

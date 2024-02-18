@@ -85,6 +85,7 @@ main {
   position: relative;
   padding-top: 7.5rem;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .hexagon {
@@ -103,8 +104,8 @@ main {
 }
 
 .image--hexagonal {
-  width: 31rem;
-  clip-path: polygon(31% 0, 73% 0%, 94.7% 49%, 73% 98%, 31.4% 98%, 11% 48.6%);
+  width: 31.2rem;
+  clip-path: polygon(33% 0, 75% 0%, 95.7% 49.5%, 75% 99%, 33.4% 99%, 12% 49.6%);
 }
 
 

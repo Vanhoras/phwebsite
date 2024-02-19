@@ -108,17 +108,14 @@
     }
 
     .introduction__greeting {
-      pointer-events: auto;
       font-size: 5.5rem;
     }
 
     .introduction__self {
-      pointer-events: auto;
       font-size: 5.5rem;
     }
 
     .introduction__job {
-      pointer-events: auto;
       font-size: 8.5rem;
       margin-top: -1rem;
     }

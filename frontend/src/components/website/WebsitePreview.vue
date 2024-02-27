@@ -101,7 +101,6 @@
   }
 
   .website__image {
-    pointer-events: auto;
     width: 100%;
     padding: 0rem 1rem 1rem 1rem;
   }

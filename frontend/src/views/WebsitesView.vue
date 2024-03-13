@@ -71,6 +71,7 @@
     margin-top: 0rem;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #000000;
+    -webkit-text-fill-color: var(--accent-3);
   }
 
   .border {

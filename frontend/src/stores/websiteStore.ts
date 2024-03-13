@@ -29,7 +29,7 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
         description: "OBI is Europe's third largest DIY retail chain.",
         points: [
                   'Development of a new microservice based online shop with marketplace functionality in the team "Cart & Checkout".',
-                  'Maintaining and implementing new features for the existing online shop.'
+                  'Maintenance and implementation of new features for the existing online shop.'
                 ],
         role: "Fullstack Developer",
         time: "2021 - 2023",
@@ -50,8 +50,8 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
         title: "el-Leasing",
         description: "el-Leasing leases work bikes for companies and employees.",
         points: [
-                  "Leading a team technically in the development of an automated contract closing process, in order to simplify the customer acquisition process.",
-                  "Collaborating in a team to develop a new leasing software."
+                  "Technical Lead of a team in the development of an automated contract closing process, in order to simplify the customer acquisition process.",
+                  "Collaboration in a team to develop a new leasing software."
                 ],
         role: "Lead Developer",
         time: "2021",
@@ -64,9 +64,9 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
         title: "Postbank",
         description: "The Postbank is a branch of Deutsche Bank, Germany's largest bank.",
         points: [
-                  "Maintaining their leasing document management system.", 
-                  "Consulting on the migration to a new document management system.",
-                  "Generating serial letters for all leasing customers in response to a VAT change."
+                  "Maintenance of their leasing document management system.", 
+                  "Consultion on the migration to a new document management system.",
+                  "Generation of serial letters for all leasing customers in response to a VAT change."
                 ],
         role: "Software Developer, Consultant",
         time: "2020 - 2021",
@@ -79,8 +79,8 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
         title: "DWS Steuerberater",
         description: "DWS Steuerberater is a tax consulting knowledge portal.",
         points: [
-                  "Creating a web portal for their trainee online seminar using drupal 8.", 
-                  "Developing a web portal for the scientific institute of the DWS using drupal 8."
+                  "Creation of a web portal for their trainee online seminar using drupal 8.", 
+                  "Development of a web portal for the scientific institute of the DWS using drupal 8."
                 ],
         role: "Fullstack Developer",
         time: "2020",
@@ -94,9 +94,9 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
         title: "IdeenExpo",
         description: "The IdeenExpo is Europe's largest youth event for technology and natural sciences.",
         points: [
-                  "Developing a web app enabling schools to book their educational trips.",
-                  "Creating a web app for companies to register and configure their exhibitions.", 
-                  "Developing a web app for VIPs to register themselves."
+                  "Development of a web app enabling schools to book their educational trips.",
+                  "Creation of a web app for companies to register and configure their exhibitions.", 
+                  "Development of a web app for VIPs to register themselves."
                 ],
         role: "Fullstack Developer",
         time: "2019 - 2020",
@@ -109,7 +109,7 @@ export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, Website
         title: "HSBC",
         description: "HSBC is the world's 7th largest bank.",
         points: [
-                  "Migrating and relaunching various websites onto a unified CMS platform for their german branch.",
+                  "Migration and relaunch of various websites onto a unified CMS platform for their german branch.",
                   "Ongoing Support from 01.2020 till 05.2021."
                 ],
         role: "Fullstack Developer",

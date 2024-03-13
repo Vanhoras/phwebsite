@@ -2,7 +2,7 @@ import { defineStore, type Store } from 'pinia'
 import type { Website } from '@/types/website'
 import type { PiniaStoreGetters } from '@/types/pinia';
 
-import obiImage from "@/assets/images/websites/OBI/obi_cart1_small.png";
+import obiImage from "@/assets/images/websites/OBI/obi_new_small.png";
 import elLeasingImage from "@/assets/images/websites/El_leasing/eleasa_small.png";
 import postbankImage from "@/assets/images/websites/Postbank/postbank_small.jpg";
 import dwsSteuerberaterImage from "@/assets/images/websites/DWS_Steuerberater/azubi-portal-5_small.png";

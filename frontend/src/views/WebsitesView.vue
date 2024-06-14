@@ -92,7 +92,7 @@
   .lg-crop {
     overflow: hidden;
     position: relative;
-    height: 16rem;
+    height: 17.2rem;
   }
 
   .websites__overview__image {

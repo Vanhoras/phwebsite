@@ -121,7 +121,7 @@
     animation-timing-function: cubic-bezier(0.35, 0.04, 0.25, 1.09);
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1100px) {
     .slide--up {
       animation-duration: 0.75s;
     }

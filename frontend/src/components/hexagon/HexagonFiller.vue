@@ -34,8 +34,8 @@
 
   const fillScreenWithHexagons = () => {
     // smaller window = smaller hexagon
-    const hexagonHeight = window.innerWidth >= 1024 ? 262 : 232;
-    const hexagonWidth = window.innerWidth >= 1024 ? 296 : 263;
+    const hexagonHeight = window.innerWidth >= 1100 ? 262 : 232;
+    const hexagonWidth = window.innerWidth >= 1100 ? 296 : 263;
 
     hexagons.value = [];
 
@@ -44,7 +44,7 @@
     const maxWidth = window.innerWidth;
 
     // shift hexagon up depending on window size
-    const offsetY = window.innerWidth >= 1024 ? hexagonHeight * -1 : hexagonHeight * -0.5;
+    const offsetY = window.innerWidth >= 1100 ? hexagonHeight * -1 : hexagonHeight * -0.5;
     const offsetX = calculateOffsetX(hexagonWidth);
 
     let currentY = offsetY;

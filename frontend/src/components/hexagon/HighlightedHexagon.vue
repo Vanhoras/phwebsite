@@ -49,7 +49,7 @@
     );
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1100px) {
     .hexagon-highlighted {
       width: 29.6rem;
       height: 26.2rem;

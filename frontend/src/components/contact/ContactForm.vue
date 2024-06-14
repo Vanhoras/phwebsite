@@ -86,7 +86,7 @@
   });
 
   const isMobileView = computed(() => {
-    return window.innerWidth < 1024;
+    return window.innerWidth < 1100;
   });
 
   const submit = async () => {

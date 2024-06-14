@@ -35,7 +35,7 @@
   const websites = computed<Website[]>(() => websiteStore.websites);
 
   const getLagBeforeShow = (index: number) => {
-    if (window.innerWidth < 1024) {
+    if (window.innerWidth < 1100) {
       return 0;
     }
 
@@ -45,7 +45,7 @@
   };
 
   const referencesHeaderImage = computed<string>(() => {
-    if (window.innerWidth < 1024) {
+    if (window.innerWidth < 1100) {
       return ReferencesHeaderMobile;
     }
     return ReferencesHeaderDesktop;
@@ -89,12 +89,12 @@
   }
 
   .websites__overview__image {
-    width: 1024px;
+    width: 1100px;
     position: absolute;
-    right: calc((100% - 1024px) / 2);
+    right: calc((100% - 1100px) / 2);
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1100px) {
     .websites__overview__image {
       width: 100%;
       position: relative;

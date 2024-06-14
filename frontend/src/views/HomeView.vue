@@ -11,7 +11,7 @@
     <div class="introduction__container">
       <p class="introduction__greeting">Hey,</p>
       <p class="introduction__self">I'm Paul Hielscher</p>
-      <h2 class="introduction__job">Developer</h2>
+      <h2 class="introduction__job">Freelance Developer</h2>
       <p class="introduction__text">
         skilled in everything from
         <RouterLink class="link link--blue" :to="{ name: 'websites' }" @click="closeMobileMenu()"
@@ -80,10 +80,13 @@
   }
 
   .introduction__job {
-    font-size: 7.5rem;
+    font-size: 5.5rem;
     font-weight: normal;
-    margin-top: -2rem;
+    margin-top: -1rem;
+    margin-bottom: 0.5rem;
     margin-left: -0.4rem;
+    line-height: 6.5rem;
+    white-space: normal;
   }
 
   .introduction__text {
@@ -102,32 +105,40 @@
 
   @media (min-width: 500px) {
     .introduction__container {
-      margin-left: calc(50vw - 26rem);
+      margin-left: calc(50vw - 27.5rem);
       width: auto;
-      max-width: 55rem;
+      max-width: 56rem;
     }
 
     .introduction__greeting {
-      font-size: 5.5rem;
+      font-size: 5rem;
     }
 
     .introduction__self {
-      font-size: 5.5rem;
+      font-size: 5rem;
     }
 
     .introduction__job {
-      font-size: 8.5rem;
-      margin-top: -1rem;
+      font-size: 6rem;
     }
 
     .introduction__text {
       pointer-events: auto;
       font-size: 2.5rem;
-      margin-top: 2.5rem;
+      margin-top: 1.5rem;
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 560px) {
+    .introduction__job {
+      font-size: 6rem;
+      margin-top: -1rem;
+      line-height: 8rem;
+      margin-bottom: 0rem;
+    }
+  }
+
+  @media (min-width: 1100px) {
     .self-image {
       top: 18.8rem;
       left: calc(50vw - 41.1rem);
@@ -135,8 +146,8 @@
 
     .introduction__container {
       position: absolute;
-      left: calc(50vw + 14.5rem);
-      top: 10rem;
+      left: calc(50vw + 0.5rem);
+      top: 15.5rem;
       padding: 0;
       margin-left: 0;
       text-align: left;
@@ -151,6 +162,24 @@
       position: absolute;
       bottom: -0.5rem;
       left: calc(50vw - 5rem);
+    }
+
+    .introduction__job {
+      white-space: normal;
+    }
+
+    .introduction__text {
+      margin-top: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .introduction__container {
+      position: absolute;
+      left: calc(50vw + 14.5rem);
+      padding: 0;
+      margin-left: 0;
+      text-align: left;
     }
   }
 </style>

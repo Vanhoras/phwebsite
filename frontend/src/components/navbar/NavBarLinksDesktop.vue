@@ -36,7 +36,7 @@
         padding: 1rem 0rem;
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1100px) {
         .nav-link {
             padding: 1rem 3rem;
         }

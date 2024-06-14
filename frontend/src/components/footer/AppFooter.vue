@@ -50,7 +50,7 @@
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1100px) {
     footer {
       padding-top: 3.5rem;
     }

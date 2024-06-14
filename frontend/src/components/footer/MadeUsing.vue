@@ -12,7 +12,7 @@
     margin-bottom: 1rem;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1100px) {
     .made-using {
       text-align: none;
       margin-bottom: 0rem;

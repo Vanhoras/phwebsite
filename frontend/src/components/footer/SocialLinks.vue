@@ -33,7 +33,7 @@
     left: calc(50% - 15rem);
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1100px) {
     .social-link__container {
       top: 5rem;
     }

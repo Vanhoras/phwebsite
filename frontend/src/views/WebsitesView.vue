@@ -69,9 +69,16 @@
     color: var(--accent-3);
     margin-bottom: 2rem;
     margin-top: 0rem;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #000000;
-    -webkit-text-fill-color: var(--accent-3);
+    letter-spacing: 3px;
+    text-shadow:
+      2px 2px 0 #000,
+      -2px -2px 0 #000,
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      0px 2px 0 #000,
+      2px 0px 0 #000,
+      0px -2px 0 #000,
+      -2px 0px 0 #000;
   }
 
   .border {

@@ -3,7 +3,12 @@
     class="hexagon-highlighted"
     :style="`top: ${props.positionY}px; left: ${props.positionX}px;`"
   >
-    <HexagonContent :position-x="props.positionX" :position-y="props.positionY" />
+    <HexagonContent
+      :position-x="props.positionX"
+      :position-y="props.positionY"
+      :mousePosition="props.mousePosition || null"
+      :triggerRemoveHighlight="props.triggerRemoveHighlight"
+    />
     <div class="hexagon__border"></div>
   </div>
 </template>
@@ -11,7 +16,12 @@
 <script setup lang="ts">
   import HexagonContent from '@/components/hexagon/HexagonContent.vue';
 
-  const props = defineProps<{ positionX: number; positionY: number }>();
+  const props = defineProps<{
+    positionX: number;
+    positionY: number;
+    mousePosition?: { x: number; y: number } | null;
+    triggerRemoveHighlight: number;
+  }>();
 </script>
 
 <style scoped>

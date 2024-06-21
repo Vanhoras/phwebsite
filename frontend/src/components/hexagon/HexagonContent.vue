@@ -2,13 +2,13 @@
   <div
     class="hexagonContent"
     ref="hexagonContent"
-    @mousemove="updateHighlightLocation"
-    @mouseleave="removeHighlight"
+    @mousemove.stop="onMouseMove"
+    @mouseleave.stop="removeHighlight"
   ></div>
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
+  import { ref, watch } from 'vue';
 
   const hexagonContent = ref<HTMLElement | null>(null);
 
@@ -17,11 +17,20 @@
   const gradientSize = '15rem';
   const gradientColor = '#8e8e8e4f';
 
-  const props = defineProps<{ positionX: number; positionY: number }>();
+  const props = defineProps<{
+    positionX: number;
+    positionY: number;
+    mousePosition: { x: number; y: number } | null;
+    triggerRemoveHighlight: number;
+  }>();
 
-  const updateHighlightLocation = (e: MouseEvent) => {
-    const x = e.pageX - baseOffsetX - props.positionX;
-    const y = e.pageY - baseOffsetY - props.positionY;
+  const onMouseMove = (e: MouseEvent) => {
+    updateHighlightLocation({ x: e.pageX, y: e.pageY });
+  };
+
+  const updateHighlightLocation = (position: { x: number; y: number }) => {
+    const x = position.x - baseOffsetX - props.positionX;
+    const y = position.y - baseOffsetY - props.positionY;
 
     const radient = `radial-gradient(circle ${gradientSize} at ${x}px ${y}px, ${gradientColor}, transparent`;
 
@@ -31,6 +40,23 @@
   const removeHighlight = () => {
     hexagonContent.value?.removeAttribute('style');
   };
+
+  watch(
+    () => props.mousePosition,
+    (value) => {
+      if (!value) return;
+      
+      updateHighlightLocation(value);
+    },
+  );
+
+  watch(
+    () => props.triggerRemoveHighlight,
+    () => {
+
+      removeHighlight();
+    },
+  );
 </script>
 
 <style scoped>

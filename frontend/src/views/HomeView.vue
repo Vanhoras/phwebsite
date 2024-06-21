@@ -52,7 +52,6 @@
   .home {
     position: relative;
     min-height: calc(100vh - 7.5rem);
-    pointer-events: none;
   }
 
   .self-image {

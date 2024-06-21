@@ -95,10 +95,6 @@
     }
   }
 
-  .section {
-    pointer-events: none;
-  }
-
   .translate--down {
     transform: translate(0, 30rem);
   }

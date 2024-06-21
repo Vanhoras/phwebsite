@@ -25,6 +25,5 @@
     margin-bottom: 8rem;
     z-index: 2;
     position: relative;
-    pointer-events: none;
   }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="background" />
-  <main>
-    <HexagonFiller />
+  <main @mousemove="propagateMouseMove" @mouseleave="propagateMouseLeave">
+    <HexagonFiller :mousePosition="mousePosition" :triggerMouseLeft="triggerMouseLeft" />
 
     <div id="topLocation" ref="topLocation"></div>
     <HomeView />
@@ -39,6 +39,8 @@
   const bottomLocation = ref<HTMLElement | null>(null);
 
   let prevScrollY = window.scrollY || document.documentElement.scrollTop;
+  let mousePosition = ref({ x: -1, y: -1 });
+  let triggerMouseLeft = 0;
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY || document.documentElement.scrollTop;
@@ -73,4 +75,11 @@
   onBeforeUnmount(() => {
     observer.disconnect();
   });
+
+  const propagateMouseMove = (e: MouseEvent) => {
+    mousePosition.value = { x: e.pageX, y: e.pageY };
+  };
+  const propagateMouseLeave = (e: MouseEvent) => {
+    triggerMouseLeft++;
+  };
 </script>

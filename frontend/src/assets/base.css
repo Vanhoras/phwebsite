@@ -21,6 +21,9 @@
 
   --success: #0de00d;
   --failure: #f11924;
+
+  --scrollbar-color-thumb: #aaa;
+  --scrollbar-color-track: transparent;
 }
 
 /* semantic color variables for this project 
@@ -59,6 +62,30 @@
 html {
   font-size: 62.5%;
 }
+
+
+/* Adjusting the scrollbar on webkit browsers, as chrome changed their default. */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  html {
+    scrollbar-color: var(--scrollbar-color-thumb) var(--black);
+  }
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color-thumb);
+  border: 1px solid transparent;
+  background-clip: content-box;
+  border-radius: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: var(--scrollbar-color-track);
+}
+
+
 
 body {
   min-height: 100vh;

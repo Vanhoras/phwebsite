@@ -59,11 +59,7 @@ export const useAppStore = defineStore<'AppStore', AppState, AppStoreGetters, Ap
         ],
         personalInfo: {
           email: import.meta.env.VITE_EMAIL || "",
-          name: "Paul Hielscher",
-          addressLine1: import.meta.env.VITE_ADDRESS_LINE_1 || "",
-          addressLine2: import.meta.env.VITE_ADDRESS_LINE_2 || "",
-          addressLine3: import.meta.env.VITE_ADDRESS_LINE_3 || "",
-          addressLine4: import.meta.env.VITE_ADDRESS_LINE_4 || "",
+          name: "Paul Joel Hielscher"
         }
     }),
 

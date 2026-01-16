@@ -3,11 +3,7 @@
   <main>
     <div id="legal_view">
       <h2>Legal Notice</h2>
-      <h3>Paul Hielscher</h3>
-      <p>{{ personalInfo.addressLine1 }}</p>
-      <p>{{ personalInfo.addressLine2 }}</p>
-      <p>{{ personalInfo.addressLine3 }}</p>
-      <p>{{ personalInfo.addressLine4 }}</p>
+      <h3>Paul Joel Hielscher</h3>
       <h3>Contact</h3>
       <p><span class="bold">E-Mail:</span> {{ personalInfo.email }}</p>
     </div>

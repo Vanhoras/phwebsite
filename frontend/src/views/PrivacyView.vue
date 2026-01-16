@@ -109,10 +109,6 @@
       <p>The data controller for data processing on this website is:</p>
       <p>
         {{ personalInfo.name }}<br />
-        {{ personalInfo.addressLine1 }}<br />
-        {{ personalInfo.addressLine2 }}<br />
-        {{ personalInfo.addressLine3 }}<br />
-        {{ personalInfo.addressLine4 }}<br />
       </p>
       <p>Email: {{ personalInfo.email }}</p>
       <p>

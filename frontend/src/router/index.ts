@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import MainView from '../views/MainView.vue';
 import LegalView from '../views/LegalView.vue';
 import PrivacyView from '../views/PrivacyView.vue';
+import GamesView from '@/views/GamesView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,11 +19,6 @@ const router = createRouter({
     },
     {
       path: '/',
-      name: 'games',
-      component: MainView
-    },
-    {
-      path: '/',
       name: 'websites',
       component: MainView
     },
@@ -35,6 +31,11 @@ const router = createRouter({
       path: '/',
       name: 'contact',
       component: MainView
+    },
+    {
+      path: '/games',
+      name: 'games',
+      component: GamesView
     },
     {
       path: '/legal',
@@ -61,9 +62,8 @@ const router = createRouter({
       };
     }
     if (to.name === 'games') {
-      return {
-        el: '#gamesLocation',
-        behavior: 'smooth',
+       return {
+        top: 0,
       };
     }
     if (to.name === 'websites') {

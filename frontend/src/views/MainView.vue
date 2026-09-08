@@ -11,11 +11,6 @@
       <WebsitesView />
     </SectionContainer>
 
-    <div id="gamesLocation"></div>
-    <SectionContainer>
-      <GamesView />
-    </SectionContainer>
-
     <div id="contactLocation"></div>
     <ContactView />
 

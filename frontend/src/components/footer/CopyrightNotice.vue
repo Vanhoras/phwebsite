@@ -1,7 +1,7 @@
 <template>
   <div class="copyright">
     <MadeUsing class="display--desktop" />
-    <p>&#169; 2024 Paul Hielscher</p>
+    <p>&#169; 2026 Paul Hielscher</p>
   </div>
 </template>
 

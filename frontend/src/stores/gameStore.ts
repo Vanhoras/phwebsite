@@ -2,6 +2,8 @@ import { defineStore, type Store } from 'pinia'
 import type { Game } from '@/types/game'
 import type { PiniaStoreGetters } from '@/types/pinia';
 
+import bubbleHatsImage from "@/assets/images/games/BubbleHats/BubbleHats.png";
+import zombiePunksImage from "@/assets/images/games/ZombiePunks/ZombiePunks.png";
 import rhythmInvokerImage from "@/assets/images/games/RhythmInvoker/rhythm_invoker_title_3.png";
 import sandsOfMagicImage from "@/assets/images/games/SandsOfMagic/Sands_of_Magic_small.png";
 import dungeonSwapperImage from "@/assets/images/games/DungeonSwapper/DungeonSwapper.png";
@@ -24,13 +26,22 @@ export const useGameStore = defineStore<'GameStore', GameState, GameStoreGetters
   state: (): GameState => ({
     games: [
       {
-        id: "rhythm-invoker",
-        itch_io_link: "https://vanhoras.itch.io/rhythm-invoker",
-        title: "Rhythm Invoker",
-        genre: "Gaelic Rock Rhythm Game",
-        image: rhythmInvokerImage,
+        id: "dungeon-swapper",
+        itch_io_link: "https://vanhoras.itch.io/dungeon-swapper",
+        title: "Dungeon Swapper",
+        genre: "Puzzle Game",
+        image: dungeonSwapperImage,
         role: "Game Design & Programming",
-        short_description: "Invoke the God of Death to combat the corrupted Guardian Spirits. Hit precise notes, channel mystical energies and rack up your score."
+        short_description: "Find your way through an undead infested dungeon using only the ability to swap position with enemies."
+      },
+      {
+        id: "bubble-hats",
+        itch_io_link: "https://vanhoras.itch.io/bubble-hats",
+        title: "Bubble Hats",
+        genre: "2D Multiplayer Shooter",
+        image: bubbleHatsImage,
+        role: "Game Developer",
+        short_description: "A 2D local multiplayer arena shooter where players wear bubble hats that grow with every hit! The bigger your bubble hat, the floatier your movements until you float away entirely. Outsmart your opponent in this chaotic, bubbly duel!"
       },
       {
         id: "sands-of-magic",
@@ -42,13 +53,22 @@ export const useGameStore = defineStore<'GameStore', GameState, GameStoreGetters
         short_description: "A city in the desert is on the verge of disaster, as the orb which provided the magic lifeblood of the city becomes unstable. Uncover the ancient legends of the orb as the Archmage and prevent the destruction of the city."
       },
       {
-        id: "dungeon-swapper",
-        itch_io_link: "https://vanhoras.itch.io/dungeon-swapper",
-        title: "Dungeon Swapper",
-        genre: "Puzzle Game",
-        image: dungeonSwapperImage,
+        id: "rhythm-invoker",
+        itch_io_link: "https://vanhoras.itch.io/rhythm-invoker",
+        title: "Rhythm Invoker",
+        genre: "Gaelic Rock Rhythm Game",
+        image: rhythmInvokerImage,
         role: "Game Design & Programming",
-        short_description: "Find your way through an undead infested dungeon using only the ability to swap position with enemies."
+        short_description: "Invoke the God of Death to combat the corrupted Guardian Spirits. Hit precise notes, channel mystical energies and rack up your score."
+      },
+      {
+        id: "zombie-punks",
+        itch_io_link: "https://vanhoras.itch.io/zombie-punks",
+        title: "Zombie Punks: Neon Beatdown",
+        genre: "Virtual Reality Rhythm Game",
+        image: zombiePunksImage,
+        role: "Game Design & Programming",
+        short_description: "Zombie punks don't want you in their neon arcade, hit them to the beat of the punk soundtrack in this immersive VR experience."
       },
       {
         id: "baby-turtle-protector",

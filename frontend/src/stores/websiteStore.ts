@@ -2,6 +2,7 @@ import { defineStore, type Store } from 'pinia'
 import type { Website } from '@/types/website'
 import type { PiniaStoreGetters } from '@/types/pinia';
 
+import dbImage from "@/assets/images/websites/DB/db.png";
 import obiImage from "@/assets/images/websites/OBI/obi_new_small.png";
 import elLeasingImage from "@/assets/images/websites/El_leasing/eleasa_small.png";
 import postbankImage from "@/assets/images/websites/Postbank/postbank_small.jpg";
@@ -23,6 +24,45 @@ export type WebsiteStore = Store<string, WebsiteState, WebsiteStoreGetters, Webs
 export const useWebsiteStore = defineStore<'WebsiteStore', WebsiteState, WebsiteStoreGetters, WebsiteStoreActions> ('WebsiteStore', {
   state: (): WebsiteState => ({
     websites: [
+      {
+        id: "db",
+        title: "Deutsche Bahn",
+        description: "Deutsche Bahn is the german railway company and the largest railway company in Europe.",
+        points: [
+                  'Development and Maintenance of www.bahn.de and other websites for the Deutsche Bahn, ensuring optimal performance and user experience.',
+                  'Implementation of accessibility features, ensuring compliance with BFSG guidelines and improving usability for users with disabilities.'
+                ],
+        role: "Frontend Developer",
+        time: "2024 - 2026",
+        techStack: ["Vue", "TypeScript", "Magnolia", "Freemarker", "Java", "Spring", "AWS"],
+        links: [{displayName: "Bahn.de", link: "https://bahn.de/"}, 
+                {displayName: "Bahn International page", link: "https://int.bahn.de/en"}, 
+                {displayName: "DB Regio", link: "https://db-regio.de/"}, 
+                {displayName: "Suewex", link: "https://www.suewex.de/"}, 
+                {displayName: "DB Buscharter", link: "https://www.db-buscharter.de/de"}, 
+                {displayName: "Westfrankenbahn", link: "https://www.westfrankenbahn.de/"}, 
+                {displayName: "Erzgebirgsbahn", link: "https://www.erzgebirgsbahn.de/"},
+                {displayName: "Regional Bahn", link: "https://regional.bahn.de/"},
+                {displayName: "DB Regio Südwesten", link: "https://www.dbregio-suedwesten.de/"},
+                {displayName: "DB Fernverkehr", link: "https://www.db-fernverkehr.com/"},
+                {displayName: "DB Regionetz", link: "https://www.db-regionetz.de/"},
+                {displayName: "DB RegioBus Baden-Württemberg", link: "https://www.dbregiobus-bawue.de/"},
+                {displayName: "DB RegioBus Mitte", link: "https://www.dbregiobus-mitte.de/"},
+                {displayName: "DB RegioBus Nord", link: "https://www.dbregiobus-nord.de/"},
+                {displayName: "DB RegioBus NRW", link: "https://www.dbregiobus-nrw.de/"},
+                {displayName: "DB RegioBus Ost", link: "https://www.dbregiobus-ost.de/"},
+                {displayName: "Fahrtziel Natur", link: "https://www.fahrtziel-natur.de/"},
+                {displayName: "Kurhessenbahn", link: "https://www.kurhessenbahn.de/"},
+                {displayName: "Lahn-Eifel-Bahn", link: "https://www.lahn-eifel-bahn.de/"},
+                {displayName: "S-Bahn Hamburg", link: "https://www.s-bahn-hamburg.de/"},
+                {displayName: "S-Bahn München", link: "https://www.s-bahn-muenchen.de/de"}, 
+                {displayName: "S-Bahn Nürnberg", link: "https://www.s-bahn-nuernberg.de/"},
+                {displayName: "S-Bahn Rheinneckar", link: "https://www.s-bahn-rheinneckar.de/"},
+                {displayName: "Südostbayernbahn", link: "https://www.suedostbayernbahn.de/"}
+              ],
+        image: dbImage,
+        color: "#ec0016",
+      },
       {
         id: "obi",
         title: "OBI",

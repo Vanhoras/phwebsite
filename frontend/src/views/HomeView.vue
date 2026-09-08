@@ -13,18 +13,8 @@
       <p class="introduction__self">I'm Paul Hielscher</p>
       <h2 class="introduction__job">Freelance Developer</h2>
       <p class="introduction__text">
-        skilled in everything from
-        <RouterLink class="link link--blue" :to="{ name: 'websites' }" @click="closeMobileMenu()"
-          >Websites</RouterLink
-        >,<br />
-        over
-        <RouterLink class="link link--yellow" :to="{ name: 'software' }" @click="closeMobileMenu()"
-          >Financing Software</RouterLink
-        >
-        to
-        <RouterLink :to="{ name: 'games' }" class="link link--magenta" @click="closeMobileMenu()"
-          >Game Development</RouterLink
-        >
+        Fullstack web developer skilled in 
+        Vue.js, Node.js, Java, Magnolia CMS and more.
       </p>
     </div>
 

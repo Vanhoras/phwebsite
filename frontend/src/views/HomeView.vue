@@ -14,7 +14,7 @@
       <h2 class="introduction__job">Freelance Developer</h2>
       <p class="introduction__text">
         Fullstack web developer skilled in 
-        Vue.js, Node.js, Java, Magnolia CMS and more.
+        Vue.js, Node.js, Java, Spring, AWS, Magnolia CMS and more.
       </p>
     </div>
 
